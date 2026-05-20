@@ -1,0 +1,42 @@
+Eliteaxis html file
+started: 09.05.2026
+Ending:
+1. home 1          = 4 = 11 section *.background img 
+2. home 2           = 4 
+3. home 3           = 4 day
+4. home 4           =  4
+5. home 5           = 4
+6. home 6           = 4
+7. home 7           =  4
+8. home 8           = 4
+9. home 9           = 4
+10. home 10         = 4
+11. about           = 2
+12. services        = 2
+13. services        = 1
+14. service Details =2
+15. Portfolio       = 1
+16. Project Details =1
+17. Team           = 1
+18. Team Details   = 1
+19. Blog           = 1
+20. Blog Details   =1 
+21. Contact        = 1/2
+22. Pricing Plan = 1/2
+23. Faq =          1/2
+
+
+Started Date: 09/05/2021
+Ending Date: 
+
+Project: Eliteaxis html file
+
+Tasks Accomplished:
+home 1
+
+today:
+     home 2 = header, hero
+
+
+Next Day Plan: 
+       Home -2 = about , service ,slider

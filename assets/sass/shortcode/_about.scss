@@ -1,0 +1,46 @@
+/*===============================================================
+ 13. About Us Section and Page
+=================================================================*/
+.cs_about_style_2 {
+  .cs_left_about {
+    .cs_left_img {
+      padding-left: 23%;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .cs_counter_style_2 {
+      position: absolute;
+      left: 0;
+      bottom: 40px;
+      animation: leftRight 03s infinite;
+    }
+  }
+
+  .cs_right_img {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .cs_img {
+    position: absolute;
+    right: 0;
+    bottom: -100px;
+    z-index: -1;
+  }
+
+  @media (max-width: 767px) {
+    .cs_left_about {
+      .cs_counter_style_2 {
+        padding: 20px;
+      }
+      .cs_left_img {
+        padding-left: 10%;
+      }
+    }
+  }
+}

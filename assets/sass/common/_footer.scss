@@ -1,0 +1,111 @@
+/*=======================================================================
+ 07. Footer Section
+=========================================================================*/
+.cs_footer_style_1 {
+  .cs_footer_menu {
+    li:not(:last-child) {
+      margin-bottom: 22px;
+    }
+
+    a {
+      text-transform: capitalize;
+      color: var(--secondary-color);
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  .cs_newsletter_style_1 {
+    .cs_form_field {
+      display: block;
+      width: 100%;
+      padding: 15px 15px;
+      outline: 0;
+      text-align: center;
+      border: 1px solid var(--gray-color);
+      background-color: transparent;
+
+      &:focus {
+        border-color: var(--accent-color);
+      }
+    }
+
+    .cs_submit_btn {
+      color: var(--white-color);
+      right: 17px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:hover {
+        color: var(--accent-color);
+        background-color: transparent;
+      }
+    }
+  }
+
+  .cs_contact_widget {
+    .cs_location {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--secondary-color);
+    }
+
+    .cs_contact {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--secondary-color);
+    }
+  }
+
+  .cs_footer_logo {
+    display: block;
+  }
+  /*===================================================
+   Footer Bottom
+  =====================================================*/
+  .cs_footer_bottom {
+    padding: 20px 0;
+
+    .cs_footer_bottom_content {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px 50px;
+    }
+
+    .cs_copywright_text {
+      span {
+        margin-left: 3px;
+      }
+    }
+
+    .cs_footer_bottom_menu {
+      display: flex;
+      align-items: center;
+      gap: 15px 20px;
+      flex-wrap: wrap;
+
+      a:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  /*===================================================
+   Footer Responsive
+ =====================================================*/
+
+  @media (max-width: 1199px) {
+    .cs_footer_menu {
+      li:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

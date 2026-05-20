@@ -1,0 +1,57 @@
+/*===============================================================
+ 21. Testimonials
+=================================================================*/
+.cs_testimonial_style_1,
+.cs_testimonial_style_2 {
+  .cs_rating_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cs_rating {
+    width: 110px;
+    color: #fc0;
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+
+  blockquote {
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5625em;
+  }
+
+  .cs_testimonial_author {
+    position: relative;
+    padding-left: 50px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 2px;
+      background-color: currentColor;
+    }
+  }
+}
+.cs_testimonial_thumbnail {
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.cs_testimonial_style_2 {
+  blockquote {
+    font-size: 24px;
+  }
+
+  @media (max-width: 767px) {
+    blockquote {
+      font-size: 16px;
+    }
+  }
+}

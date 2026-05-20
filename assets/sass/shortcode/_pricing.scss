@@ -1,0 +1,37 @@
+/*===============================================================
+ 19. Pricing
+=================================================================*/
+.cs_pricing_table_style_1 {
+  padding: 30px;
+
+  .cs_pricing_features_list {
+    li {
+      padding-left: 32px;
+      position: relative;
+      margin-bottom: 20px;
+      font-size: 18px;
+      line-height: 1.5em;
+      font-weight: 600;
+      font-family: var(--primary-font);
+
+      img {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  hr {
+    margin: 20px 0 30px;
+  }
+
+  .cs_btn_style_1 {
+    border-radius: 10px;
+  }
+}
