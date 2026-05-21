@@ -3,6 +3,18 @@
   display: inline-block;
 }
 
+.cs_counter_style_3 {
+  padding: 20px;
+  display: inline-block;
+  border-radius: 10px;
+  border: 5px solid var(--white-color);
+  background: var(--accent-color);
+
+  p {
+    margin-top: -15px;
+  }
+}
+
 .cs_counter_wrapper_style_1 {
   display: flex;
   justify-content: space-between;

@@ -44,3 +44,26 @@
     }
   }
 }
+
+.cs_about_style_3 {
+  .cs_left_about_img {
+    display: flex;
+    gap: 20px 24px;
+  }
+
+  .cs_second_img {
+    padding-top: 25%;
+  }
+
+  .cs_circle_text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 13%;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}

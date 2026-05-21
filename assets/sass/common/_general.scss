@@ -200,6 +200,9 @@
 .cs_secondary_color {
   color: var(--secondary-color);
 }
+.cs_primary_color {
+  color: var(--primary-color);
+}
 
 .cs_blue_color {
   color: var(--blue-color);
@@ -365,6 +368,7 @@
   span {
     position: relative;
     z-index: 2;
+    color: var(--white-color);
   }
 
   &::before {
@@ -382,6 +386,7 @@
 
   &:hover {
     border-color: var(--accent-color);
+    color: var(--white-color);
     i {
       color: var(--white-color);
     }
@@ -620,6 +625,16 @@
     border-radius: 50%;
     background-color: currentColor;
   }
+}
+.cs_section_subtitle_style_2 {
+  display: inline-block;
+  letter-spacing: 1.4px;
+  padding: 10px 20px;
+  border: 1px solid currentColor;
+  font-family: var(--primary-font);
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 200px;
 }
 /*=============================================
  Progressbar Component

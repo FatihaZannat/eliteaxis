@@ -32,11 +32,10 @@ Ending Date:
 Project: Eliteaxis html file
 
 Tasks Accomplished:
-home 1
-
+home 1, home 2, home-3 = 30%
 today:
-     home 2 = header, hero
+     home 3 = Portfolio, how to work, team
 
 
 Next Day Plan: 
-       Home -2 = about , service ,slider
+       Home -3 = testimonial, contact, blogs
