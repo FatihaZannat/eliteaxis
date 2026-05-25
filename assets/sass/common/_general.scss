@@ -200,6 +200,7 @@
 .cs_secondary_color {
   color: var(--secondary-color);
 }
+
 .cs_primary_color {
   color: var(--primary-color);
 }
@@ -207,12 +208,16 @@
 .cs_blue_color {
   color: var(--blue-color);
 }
+
 .cs_light_blue_color {
   color: var(--light-blue-color);
 }
 
 .cs_gray_color {
   color: var(--gray-color);
+}
+.cs_gray_color2 {
+  color: var(--gray-color2);
 }
 
 /*=====================================  
@@ -344,6 +349,9 @@
 .cs_gap_y_24 {
   gap: 24px 0;
 }
+.cs_gap_y_20 {
+  gap: 20px 0;
+}
 
 /*====================================================  
  Button Components
@@ -353,7 +361,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 20px 30px;
+  padding: 20px 40px;
   border-radius: 150px;
   position: relative;
   overflow: hidden;
@@ -742,17 +750,7 @@
 /*===========================================================  
   Funfact Odometer
 =============================================================*/
-.cs_funfact_style_1 {
-  .cs_funfact_number {
-    display: flex;
-    align-items: center;
-    line-height: 1em;
-
-    > * {
-      line-height: 1em !important;
-    }
-  }
-
+.cs_counter_style_1 {
   .odometer-inside,
   .odometer-digit,
   .odometer-digit-inner,
@@ -811,7 +809,9 @@
   }
 }
 
-// --------------------------------
+/*===========================================================  
+  Image Effect
+=============================================================*/
 
 .cs_effect_1 {
   display: block;
@@ -850,3 +850,7 @@
     }
   }
 }
+
+/*===========================================================  
+  
+=============================================================*/

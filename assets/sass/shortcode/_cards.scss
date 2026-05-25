@@ -143,6 +143,72 @@
   }
 }
 
+.cs_card_style_5 {
+  padding: 60px;
+  position: absolute;
+  width: min(588px, 90%);
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .cs_card_subtitle {
+    padding: 10px 30px;
+    border-radius: 150px;
+    color: var(--white-color);
+    border: 1px solid var(--accent-color);
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: var(--primary-font);
+    font-weight: 600;
+  }
+
+  .cs_btn_style_1 {
+    background-color: transparent;
+    border-color: var(--accent-color);
+
+    &::before {
+      background-color: var(--accent-color);
+    }
+  }
+
+  @media (max-width: 991px) {
+    padding: 40px;
+  }
+  @media (max-width: 575px) {
+    padding: 30px 20px;
+  }
+}
+
+.cs_card_style_6 {
+  position: relative;
+  padding-left: 55px;
+  counter-increment: accordion-counter;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  &::after {
+    content: counter(accordion-counter, decimal-leading-zero);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    position: absolute;
+    left: -35px;
+    top: 0;
+    color: var(--white-color);
+    font-size: 30px;
+    font-family: var(--primary-font);
+    font-weight: 600;
+    line-height: 1.16667em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+  }
+}
+
 .cs_card_btn {
   width: 50px;
   height: 50px;

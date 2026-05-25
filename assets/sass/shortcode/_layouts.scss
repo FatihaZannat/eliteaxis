@@ -319,3 +319,122 @@
     padding: 0 25%;
   }
 }
+
+/*=======================================================
+  Project
+=========================================================*/
+
+.cs_portfolio_style_1 {
+  .cs_portfolio_img {
+    padding-right: 34%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &:nth-child(even) {
+    .cs_portfolio_img {
+      padding-left: 34%;
+      padding-right: 0;
+    }
+    .cs_card_style_5 {
+      left: 0;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 60px;
+  }
+
+  @media (max-width: 1199px) {
+    .cs_card_style_5 {
+      position: relative;
+      z-index: 2;
+      top: 0;
+      margin: 0 auto;
+      margin-top: -50px;
+      transform: none;
+    }
+    .cs_portfolio_img {
+      padding-right: 0;
+    }
+    &:nth-child(even) {
+      .cs_portfolio_img {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+/*=======================================================
+  Workfolw
+=========================================================*/
+
+.cs_workflow_section {
+  .cs_left_thumbnails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .cs_img {
+    border-radius: 10px 10px 200px 10px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &:nth-child(2) {
+      border-radius: 10px 10px 10px 200px;
+    }
+    &:nth-child(3) {
+      border-radius: 10px 200px 10px 10px;
+    }
+    &:nth-child(4) {
+      border-radius: 200px 10px 10px 10px;
+    }
+  }
+
+  .cs_circle_text {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .cs_play_btn {
+      background-color: transparent;
+      color: var(--white-color);
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .cs_right_workflow {
+    counter-reset: accordion-counter;
+    position: relative;
+    &::after {
+      content: "";
+      width: 1px;
+      height: 90%;
+      background-color: var(--accent-color);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+/*=======================================================
+  Form
+=========================================================*/
+.cs_form_field {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--gray-color2);
+  background: transparent;
+  padding: 15px;
+  outline: none;
+}
+textarea.cs_form_field {
+  padding: 30px;
+}

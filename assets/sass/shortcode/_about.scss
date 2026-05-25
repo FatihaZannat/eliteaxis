@@ -67,3 +67,24 @@
     object-fit: cover;
   }
 }
+
+.cs_about_style_4 {
+  .cs_right_about {
+    padding-left: 30px;
+  }
+
+  .cs_left_about {
+    padding-bottom: 16%;
+  }
+
+  .cs_circle_text {
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .cs_play_btn {
+      background-color: transparent;
+      border-color: var(--white-color);
+    }
+  }
+}
