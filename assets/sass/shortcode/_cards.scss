@@ -209,6 +209,87 @@
   }
 }
 
+.cs_card_style_7 {
+  padding: 30px;
+  background-color: var(--blue-color);
+  display: flex;
+  gap: 30px;
+
+  .cs_card_info {
+    width: min(358px, 100%);
+  }
+
+  .cs_card_thumbnail {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.cs_card_style_8 {
+  padding: 30px;
+  border: 1px solid var(--gray-color2);
+  display: flex;
+  align-items: center;
+  gap: 60px;
+
+  .cs_card_thumbnail {
+    border: 1px solid var(--gray-color2);
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cs_card_info {
+    width: min(520px, 100%);
+  }
+
+  .cs_btn_style_1 {
+    border-color: var(--accent-color);
+  }
+
+  &:nth-child(even) {
+    padding: 30px 30px 30px 60px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  &:not(:last-child) {
+    margin-bottom: 60px;
+  }
+}
+
+.cs_card_style_9 {
+  padding: 30px;
+  transition: all 0.3s ease;
+  counter-increment: accordion-counter;
+
+  .cs_card_title {
+    position: relative;
+
+    padding-left: 42px;
+    &::after {
+      content: counter(accordion-counter, decimal-leading-zero) ".";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &:hover {
+    background-color: var(--accent-color);
+  }
+}
+
 .cs_card_btn {
   width: 50px;
   height: 50px;
@@ -223,4 +304,8 @@
     background-color: var(--accent-color);
     color: var(--white-color);
   }
+}
+
+.cs_card_wrapper_style_1 {
+  counter-reset: accordion-counter;
 }

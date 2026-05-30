@@ -3,7 +3,7 @@ started: 09.05.2026
 Ending:
 1. home 1          = 4 = 11 section *.background img 
 2. home 2           = 4 
-3. home 3           = 4 day
+3. home 3           = 4 day , circle text size & responsive problem , testimonial pagination in small screen.
 4. home 4           =  4
 5. home 5           = 4
 6. home 6           = 4
@@ -32,10 +32,10 @@ Ending Date:
 Project: Eliteaxis html file
 
 Tasks Accomplished:
-home 1, home 2, home-3 = 30%
+home 1, home 2, home-3 = 80%
 today:
-     home 3 = Portfolio, how to work, team
+     home 3 = testimonial, contact, blogs
 
 
 Next Day Plan: 
-       Home -3 = testimonial, contact, blogs
+       Home -4 

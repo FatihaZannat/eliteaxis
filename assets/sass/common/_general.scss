@@ -466,7 +466,6 @@
   justify-content: center;
   gap: 8px;
   font-family: var(--primary-font);
-  color: var(--primary-color);
   font-weight: 600;
   font-size: 14px;
   &:hover {
@@ -477,7 +476,6 @@
 .cs_text_btn_style_2 {
   display: inline-block;
   perspective: 500px;
-  color: var(--accent-color);
 
   .cs_btn_text {
     display: inline-block;
@@ -617,7 +615,8 @@
     width: min(536px, 100%);
   }
 }
-.cs_section_subtitle {
+
+.cs_section_subtitle_style_1 {
   padding-left: 17px;
   font-weight: 600;
   position: relative;

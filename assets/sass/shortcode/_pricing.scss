@@ -1,7 +1,8 @@
 /*===============================================================
  19. Pricing
 =================================================================*/
-.cs_pricing_table_style_1 {
+.cs_pricing_table_style_1,
+.cs_pricing_table_style_2 {
   padding: 30px;
 
   .cs_pricing_features_list {
@@ -33,5 +34,24 @@
 
   .cs_btn_style_1 {
     border-radius: 10px;
+  }
+}
+
+.cs_pricing_table_style_2 {
+  border: 1px solid var(--accent-color);
+  background: transparent;
+
+  .cs_price_type {
+    border: 1px solid var(--accent-color);
+    padding: 10px 40px;
+    border-radius: 150px;
+    width: fit-content;
+  }
+  .cs_btn_style_1 {
+    background-color: transparent;
+    border-color: var(--accent-color);
+    &::before {
+      background-color: var(--accent-color);
+    }
   }
 }
