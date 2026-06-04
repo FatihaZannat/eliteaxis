@@ -148,9 +148,20 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 648px;
 
   .cs_testimonial_info {
-    width: min(290px, 100%);
+    flex: 1;
+    text-wrap: wrap;
+  }
+
+  .cs_testimonial_thumbnail {
+    flex: none;
+    width: 300px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
   }
 }
 

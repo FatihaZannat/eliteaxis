@@ -55,3 +55,20 @@
     }
   }
 }
+
+.cs_pricing_wrapper_style_1 {
+  position: relative;
+
+  .cs_img {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    max-width: 424px;
+    filter: brightness(0) saturate(100%) invert(46%) sepia(0%) saturate(0%)
+      hue-rotate(347deg) brightness(88%) contrast(85%);
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -88,3 +88,23 @@
     }
   }
 }
+
+.cs_about_style_5 {
+  .cs_about_right {
+    .cs_about_img {
+      padding-left: 19%;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .cs_counter_style_2 {
+    padding: 20px !important;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    animation: leftRight 03s infinite;
+  }
+}

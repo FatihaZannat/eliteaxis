@@ -142,7 +142,7 @@
   .cs_blog_thumbnail {
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) scale(0.25);
+    transform: translate(-50%, -50%) scale(1);
     transition: all 1s ease;
     opacity: 0;
     visibility: hidden;
@@ -174,7 +174,7 @@
       top: 0;
       visibility: visible;
       opacity: 1;
-      transform: scale(1);
+      transform: scale(1.1);
     }
   }
 }

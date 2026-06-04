@@ -31,7 +31,8 @@
     border-bottom: 1px solid var(--accent-color);
   }
 
-  &.cs_style_2 {
+  &.cs_style_2,
+  &.cs_style_3 {
     border-bottom: none;
     .container-fluid {
       padding: 0 80px;
@@ -56,22 +57,20 @@
       }
     }
   }
-  // &.cs_style_3 {
-  //   .cs_main_header_in {
-  //     height: 124px;
-  //   }
-  // }
 
-  // &.cs_style_4 {
-  //   .cs_main_header_in {
-  //     height: 134px;
-  //   }
+  &.cs_style_3 {
+    padding-top: 30px;
+    .cs_main_header_in {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+    }
+  }
 
-  //   .container-fluid {
-  //     padding: 0 12px;
-  //     max-width: 1704px;
-  //   }
-  // }
+  &.cs_style_4 {
+    .container-fluid {
+      padding: 0 20px;
+    }
+  }
 
   // &.cs_style_5,
   // &.cs_style_6 {

@@ -122,6 +122,10 @@
   }
 }
 
+.cs_fs_150 {
+  font-size: 150px;
+  line-height: 1em;
+}
 .cs_fs_200 {
   font-size: 200px;
   line-height: 1em;
@@ -361,13 +365,12 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 20px 40px;
+  padding: 19px 40px;
   border-radius: 150px;
   position: relative;
   overflow: hidden;
   border: 1px solid;
   border-color: transparent;
-  color: var(--white-color);
   transition: all 0.4s ease;
   text-transform: uppercase;
   font-family: var(--primary-font);
@@ -376,7 +379,7 @@
   span {
     position: relative;
     z-index: 2;
-    color: var(--white-color);
+    color: inherit;
   }
 
   &::before {
@@ -403,6 +406,10 @@
       bottom: 0;
       transform: translate(-50%, 0) scaleX(1.5) scaleY(1.5);
     }
+  }
+
+  &.cs_accent_border {
+    border-color: var(--accent-color);
   }
 }
 
@@ -460,6 +467,13 @@
   }
 }
 
+.cs_btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .cs_text_btn_style_1 {
   display: inline-flex;
   align-items: center;
@@ -493,45 +507,79 @@
 }
 
 .cs_player_btn_style_1 {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  position: relative;
-  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
 
-  > * {
+  .cs_play_icon {
     position: relative;
-    z-index: 1;
-  }
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--white-color);
+    transition: all 0.3s ease;
 
-  &::before,
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 0;
-    transform: translate(-50%, -50%) scale(1);
-    border-radius: inherit;
-    border: 6px solid currentColor;
-    animation: pulseBorder 3s linear infinite;
-  }
-
-  &::after {
-    animation-delay: 1.5s;
-  }
-
-  &:hover {
-    transform: scale(0.75);
-
-    &::before,
     &::after {
-      animation-play-state: paused;
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: var(--white-color);
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+    }
+  }
+  &:hover {
+    color: var(--accent-color);
+
+    .cs_play_icon {
+      border-color: var(--accent-color);
+      &::after {
+        background: var(--accent-color);
+      }
     }
   }
 }
+
+// .cs_player_btn_style_1 {
+//   width: 160px;
+//   height: 160px;
+//   border-radius: 50%;
+//   position: relative;
+//   transition: all 0.3s ease;
+
+//   > * {
+//     position: relative;
+//     z-index: 1;
+//   }
+
+//   &::before,
+//   &::after {
+//     content: "";
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     z-index: 0;
+//     transform: translate(-50%, -50%) scale(1);
+//     border-radius: inherit;
+//     border: 6px solid currentColor;
+//     animation: pulseBorder 3s linear infinite;
+//   }
+
+//   &::after {
+//     animation-delay: 1.5s;
+//   }
+
+//   &:hover {
+//     transform: scale(0.75);
+
+//     &::before,
+//     &::after {
+//       animation-play-state: paused;
+//     }
+//   }
+// }
 .cs_player_btn_style_2 {
   width: 100px;
   height: 100px;

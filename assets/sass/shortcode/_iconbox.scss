@@ -186,6 +186,105 @@
     }
   }
 }
+
+.cs_iconbox_style_4 {
+  padding-left: 48px;
+  position: relative;
+
+  .cs_iconbox_icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cs_btn_style_1 {
+    margin-left: -48px;
+  }
+}
+
+.cs_iconbox_style_5 {
+  padding: 40px;
+  border: 1px solid var(--gray-color2);
+
+  .cs_iconbox_icon {
+    border: 1px solid var(--accent-color);
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    transition: all 0.3s ease;
+
+    img {
+      border-radius: 0;
+      filter: brightness(0) saturate(100%) invert(41%) sepia(86%) saturate(365%)
+        hue-rotate(131deg) brightness(93%) contrast(94%);
+    }
+  }
+
+  .cs_iconbox_img {
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 01s ease;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(12, 30, 33, 0.8) 0%,
+        rgba(12, 30, 33, 0.8) 100%
+      );
+    }
+  }
+
+  &:hover {
+    .cs_iconbox_icon {
+      border: 1px solid var(--white-color);
+
+      img {
+        border-radius: 0;
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+          saturate(7461%) hue-rotate(218deg) brightness(118%) contrast(108%);
+      }
+    }
+
+    .cs_iconbox_info {
+      color: var(--white-color);
+      transition: all 0.3s ease;
+    }
+
+    .cs_iconbox_title {
+      color: var(--white-color);
+      transition: all 0.3s ease;
+    }
+
+    .cs_iconbox_img {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1.1);
+    }
+
+    .cs_btn_style_1 {
+      background-color: var(--accent-color);
+      color: var(--white-color);
+    }
+  }
+}
+
 /*===============================================================
   Iconbox Wrapper
 =================================================================*/
