@@ -30,6 +30,7 @@
   | 17. Hobble Animation With Mouse Move
   | 18. Animation With GSAP
   | 19. Dynamic contact form
+  | 20. service Hover Tabs
   |
   */
 
@@ -65,6 +66,7 @@
     animationOnHover();
     progressBar();
     cardHoverActive();
+    serviceHoverTabs()
     // gsapAnimation();
     // dynamicContactForm();
     if ($.exists(".cs_getting_year")) {
@@ -1113,5 +1115,27 @@
           });
       });
     }
+  }
+
+    /*===============================================================
+    20. Team hover
+  =================================================================*/
+  function serviceHoverTabs() {
+    $(".cs_team_style_5").each(function () {
+      console.log("hello");
+      var $section = $(this);
+      var $items = $section.find(".cs_team_menu_item");
+      var $panes = $section.find(".cs_team_pane");
+
+      if (!$items.length || !$panes.length) return;
+
+      $items.on("mouseenter focus", function () {
+        var idx = $items.index(this);
+        $items.removeClass("cs_active");
+        $(this).addClass("cs_active");
+        $panes.removeClass("cs_active");
+        $panes.eq(idx).addClass("cs_active");
+      });
+    });
   }
 })(jQuery); // End of use strict

@@ -1,37 +1,6 @@
 /*================================================================
   08. Slider
 ==================================================================*/
-
-// .cs_overflow_visible {
-//   .swiper {
-//     overflow: visible;
-//     position: initial;
-//   }
-
-//   .swiper-slide {
-//     visibility: hidden;
-//     opacity: 0;
-//   }
-
-//   .swiper-slide-active,
-//   .swiper-slide-next {
-//     visibility: visible;
-//     opacity: 1;
-//   }
-
-//   @media (max-width: 991px) {
-//     .swiper {
-//       overflow: hidden;
-//       position: relative;
-//     }
-
-//     .swiper-slide {
-//       visibility: visible;
-//       opacity: 1;
-//     }
-//   }
-// }
-
 .cs_align_center {
   .swiper-wrapper {
     align-items: center;
@@ -90,98 +59,6 @@
 /*=======================================================
  Pagination
 =========================================================*/
-// .swiper-pagination.cs_style_1 {
-//   display: flex;
-//   gap: 10px;
-//   align-items: center;
-//   justify-content: flex-start;
-
-//   .swiper-pagination-bullet {
-//     width: 60px;
-//     height: 5px;
-//     border-radius: 0;
-//     opacity: 1;
-//     font-size: 0;
-//     background-color: var(--primary-color);
-//   }
-
-//   .swiper-pagination-bullet-active {
-//     background-color: var(--accent-color);
-//   }
-// }
-
-// .swiper-pagination.cs_style_2 {
-//   width: fit-content;
-//   display: inline-flex;
-//   gap: 10px;
-//   align-items: center;
-//   justify-content: flex-end;
-//   position: absolute;
-//   left: initial;
-//   right: 160px;
-//   bottom: 60px;
-//   z-index: 2;
-
-//   .swiper-pagination-bullet {
-//     width: fit-content;
-//     height: fit-content;
-//     opacity: 1;
-//     margin: 0;
-//     position: relative;
-//     border-radius: 0;
-//     padding-right: 40px;
-//     text-align: center;
-//     font-size: 30px;
-//     line-height: 1em;
-//     color: var(--white-color);
-//     font-family: var(--secondary-font);
-//     background-color: transparent;
-//     transition: all 0.3s ease;
-
-//     &:not(:empty):not(:nth-child(n + 10))::before {
-//       content: "0";
-//       line-height: inherit;
-//       transition: inherit;
-//     }
-
-//     &::after {
-//       content: "";
-//       width: 30px;
-//       height: 1px;
-//       background-color: currentColor;
-//       position: absolute;
-//       right: 0;
-//       top: 13px;
-//       z-index: 0;
-//       transition: inherit;
-//     }
-
-//     &:last-child {
-//       padding-right: 0;
-
-//       &::after {
-//         left: initial;
-//         right: calc(100% + 10px);
-//       }
-//     }
-//   }
-
-//   .swiper-pagination-bullet-active {
-//     color: var(--accent-color);
-
-//     &::after {
-//       z-index: 1;
-//     }
-//   }
-
-//   @media (max-width: 991px) {
-//     width: 100%;
-//     justify-content: center;
-//     left: initial;
-//     right: initial;
-//   }
-// }
-
 .swiper-pagination.cs_style_1,
 .swiper-pagination.cs_style_2,
 .swiper-pagination.cs_style_4 {
@@ -250,7 +127,8 @@
   }
 }
 
-.swiper-pagination.swiper-pagination.cs_style_3 {
+.swiper-pagination.cs_style_3,
+.swiper-pagination.cs_style_5 {
   .swiper-pagination-bullet {
     border-radius: 0;
     height: 5px;
@@ -268,6 +146,25 @@
     }
     &:last-child {
       border-radius: 0 5px 5px 0;
+    }
+  }
+}
+
+.swiper-pagination.cs_style_5 {
+  width: fit-content;
+  left: calc(100% - 200px);
+  bottom: -10px;
+
+  .swiper-pagination-bullet {
+    margin: 5px !important;
+    width: 50px;
+    height: 5px;
+    background-color: var(--accent-color);
+    opacity: 1;
+    border-radius: 5px !important;
+
+    &.swiper-pagination-bullet-active {
+      background-color: var(--white-color);
     }
   }
 }
@@ -326,53 +223,56 @@
     }
   }
 }
+
+.cs_slider.cs_style_2 {
+  .cs_single_product_nav {
+    max-height: 520px;
+    position: initial;
+    transform: none;
+
+    .cs_nav_thumbnail {
+      width: 112px;
+      height: 112px !important;
+      border-radius: 10px;
+      &.swiper-slide-thumb-active {
+        border: 1px solid var(--accent-color) !important;
+      }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .cs_single_product_nav {
+      .cs_nav_thumbnail {
+        width: 100px;
+        height: 100px !important;
+      }
+    }
+  }
+  @media (max-width: 1199px) {
+    .cs_single_product_nav {
+      .cs_nav_thumbnail {
+        width: 80px;
+        height: 80px !important;
+      }
+    }
+  }
+  @media (max-width: 575px) {
+    .cs_single_product_nav {
+      .cs_nav_thumbnail {
+        width: 65px;
+        height: 65px !important;
+      }
+    }
+  }
+}
+
 .cs_full_screen_right {
   width: calc(100vw - (100vw - 1320px) / 2);
 }
-// .cs_slider.cs_style_2 {
-//   .cs_single_product_nav {
-//     max-height: 520px;
-//     position: initial;
-//     transform: none;
 
-//     .cs_nav_thumbnail {
-//       width: 112px;
-//       height: 112px !important;
-//       border-radius: 10px;
-//       &.swiper-slide-thumb-active {
-//         border: 1px solid var(--accent-color) !important;
-//       }
-//     }
-//   }
-
-//   @media (max-width: 1400px) {
-//     .cs_single_product_nav {
-//       .cs_nav_thumbnail {
-//         width: 100px;
-//         height: 100px !important;
-//       }
-//     }
-//   }
-//   @media (max-width: 1199px) {
-//     .cs_single_product_nav {
-//       .cs_nav_thumbnail {
-//         width: 80px;
-//         height: 80px !important;
-//       }
-//     }
-//   }
-//   @media (max-width: 575px) {
-//     .cs_single_product_nav {
-//       .cs_nav_thumbnail {
-//         width: 65px;
-//         height: 65px !important;
-//       }
-//     }
-//   }
-// }
 .cs_slider.cs_style_3 {
-  .swiper-slide {
-    margin-right: 0 !important;
+  .cs_full_screen_right {
+    width: calc(100vw - (100vw - 1615px) / 2);
   }
 }
 /*=======================================================
@@ -478,62 +378,33 @@
     }
   }
 
-  // &.cs_type_3,
-  // &.cs_type_4 {
-  //
-  //   left: -50px;
-  //   top: 190px;
-  //   padding: 50px 0;
-  //   border-top: 1px solid var(--border-color);
-  //   border-bottom: 1px solid var(--border-color);
-  //   transform: rotate(10deg);
-
-  //   .cs_sliding_content {
-  //     display: flex;
-  //     flex: none;
-  //     gap: 80px;
-  //     margin: 0 40px;
-  //   }
-  // }
-
-  // &.cs_type_3 {
-  //   .cs_sliding_content {
-  //     animation-direction: alternate-reverse;
-  //   }
-  // }
-
-  // &.cs_type_4 {
-  //   top: initial;
-  //   bottom: 180px;
-  //   transform: rotate(-10deg);
-  // }
-
-  // &.cs_type_5 {
-  //   border: 0;
-  //   padding: 0;
-
-  //   .cs_sliding_content {
-  //     display: flex;
-  //     gap: 40px;
-  //     margin: 0 20px;
-  //   }
-  // }
-
   &.cs_type_6 {
-    border: 0;
-    padding: 0;
+    writing-mode: vertical-rl;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    .cs_sliding_content {
-      display: flex;
-      gap: 0;
-      margin: 0;
+    .cs_slider_inner {
+      margin: 40px 0;
+      gap: 20px;
+      flex-direction: row;
+      // transform: rotate(180deg);
+      // transform: scaleX(-1);
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0d0d0d 100%);
+    .cs_sliding_content {
+      animation: scrollingAnimation2 60s linear infinite;
+      background: linear-gradient(
+        270deg,
+        rgba(12, 30, 33, 0.1) 0%,
+        rgba(255, 255, 255, 0.5) 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 128px;
+      line-height: 1em;
+      flex-direction: column-reverse;
     }
   }
 
@@ -559,6 +430,29 @@
   }
 }
 
+.cs_horizontal_slider_wrapper_style_1 {
+  position: relative;
+  overflow: hidden;
+
+  .cs_slider_img {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #0c1e21 100%);
+    }
+  }
+
+  .cs_horizontal_slider.cs_type_1 {
+    position: absolute;
+    padding: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
 /*==========================================
  Animations
 ============================================*/
@@ -566,4 +460,17 @@
   100% {
     transform: translateX(-100%);
   }
+}
+@keyframes scrollingAnimation2 {
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/*==========================================
+ Wrapper
+============================================*/
+.cs_slider_wrapper_style_1 {
+  width: calc(100% - 40px);
+  margin: 0 auto;
 }

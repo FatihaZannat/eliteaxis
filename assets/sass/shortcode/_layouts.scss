@@ -47,7 +47,8 @@
 =========================================================*/
 
 .cs_customer_review_style_1,
-.cs_customer_review_style_2 {
+.cs_customer_review_style_2,
+.cs_customer_review_style_3 {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -286,6 +287,33 @@
   }
 }
 
+.cs_customer_review_style_3 {
+  .cs_customer_avaters {
+    .cs_customer_img {
+      width: 80px;
+      height: 80px;
+      border: 2px solid var(--white-color);
+
+      &:not(:first-child) {
+        margin-left: -37px;
+      }
+    }
+  }
+
+  .cs_review_details {
+    .cs_review_heading {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .cs_rating {
+      color: #fc0;
+      width: 150px;
+      letter-spacing: 3px;
+    }
+  }
+}
+
 /*=======================================================
   Progress 
 =========================================================*/
@@ -437,4 +465,89 @@
 }
 textarea.cs_form_field {
   padding: 30px;
+}
+
+/*=======================================================
+  Contact Section
+=========================================================*/
+
+.cs_contact_style_1 {
+  .cs_contact_form {
+    padding-right: 40px;
+  }
+  .cs_circle_text {
+    width: 150px;
+    height: 150px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .cs_contact_img {
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+/*=======================================================
+  Layer Img box
+=========================================================*/
+.cs_layer_img_box {
+  position: relative;
+  padding-right: 15%;
+
+  .cs_layer_img_2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-left: 53%;
+
+    img {
+      border: 2px solid var(--white-color);
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+/*=======================================================
+    CTA
+=========================================================*/
+.cs_cta_style_1 {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  padding: 140px 0px;
+  position: relative;
+
+  &::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    opacity: 0.8;
+  }
+
+  .cs_section_heading_style_1 {
+    width: min(720px, 100%);
+  }
+
+  .cs_cta_in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px 40px;
+    flex-wrap: wrap;
+  }
+
+  .cs_counter_style_2 {
+    width: 200px;
+    height: 200px;
+    padding: 52px 20px;
+  }
 }

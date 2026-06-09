@@ -270,8 +270,11 @@
   }
 
   .cs_hero_right {
-    padding: 165px 120px;
+    padding: 60px 20px;
 
+    .cs_hero_right_in {
+      width: min(690px, 100%);
+    }
     .cs_bg_img {
       right: 0;
       bottom: 0;
@@ -311,6 +314,35 @@
         width: 100%;
         object-fit: cover;
       }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    // .cs_hero_right
+  }
+}
+
+.cs_hero_style_6 {
+  position: relative;
+
+  .container-fluid {
+    padding: 0 120px;
+  }
+
+  .cs_hero_content {
+    padding: 282px 0;
+    width: min(830px, 100%);
+  }
+
+  .cs_hero_right_img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 44%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
     }
   }
 }

@@ -2,7 +2,8 @@
   16. Iconbox
 =================================================================*/
 .cs_iconbox_style_1,
-.cs_iconbox_style_3 {
+.cs_iconbox_style_3,
+.cs_iconbox_style_7 {
   padding: 30px;
   height: fit-content;
   margin-top: auto;
@@ -149,7 +150,8 @@
   }
 }
 
-.cs_iconbox_style_3 {
+.cs_iconbox_style_3,
+.cs_iconbox_style_7 {
   transition: all 0.3s ease;
   padding: 40px;
 
@@ -169,7 +171,6 @@
     position: relative;
     &:before {
       content: counter(accordion-counter, decimal-leading-zero);
-      position: absolute;
     }
   }
 
@@ -187,7 +188,8 @@
   }
 }
 
-.cs_iconbox_style_4 {
+.cs_iconbox_style_4,
+.cs_iconbox_style_6 {
   padding-left: 48px;
   position: relative;
 
@@ -211,6 +213,7 @@
 
 .cs_iconbox_style_5 {
   padding: 40px;
+  height: 100%;
   border: 1px solid var(--gray-color2);
 
   .cs_iconbox_icon {
@@ -230,6 +233,8 @@
   .cs_iconbox_img {
     bottom: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     opacity: 0;
     visibility: hidden;
@@ -283,13 +288,124 @@
       color: var(--white-color);
     }
   }
+
+  @media (max-width: 1199px) {
+    padding: 30px 20px;
+  }
 }
 
+.cs_iconbox_style_6 {
+  padding-left: 112px;
+  padding-right: 24px;
+
+  .cs_iconbox_info {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .cs_iconbox_icon {
+    width: 88px;
+    height: 88px;
+
+    img {
+      filter: brightness(0) saturate(100%) invert(41%) sepia(86%) saturate(365%)
+        hue-rotate(131deg) brightness(93%) contrast(94%);
+    }
+  }
+}
+
+.cs_iconbox_style_7 {
+  border: 1px solid var(--accent-color);
+  padding: 30px;
+
+  .cs_iconbox_icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cs_number {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--accent-color);
+    color: var(--primary-color);
+    opacity: 0.2;
+  }
+  &:hover {
+    background-color: var(--accent-color);
+
+    .cs_number {
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: var(--white-color);
+      color: transparent;
+    }
+
+    .cs_iconbox_icon {
+      border-color: var(--white-color);
+    }
+
+    .cs_text_btn_style_1 {
+      color: var(--white-color);
+    }
+  }
+}
+
+.cs_iconbox_style_8 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px 30px;
+  transition: all 0.3s ease;
+
+  .cs_iconbox_icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--accent-color);
+    padding: 10px;
+
+    img {
+      border-radius: 0;
+      filter: brightness(0) saturate(100%) invert(41%) sepia(86%) saturate(365%)
+        hue-rotate(131deg) brightness(93%) contrast(94%);
+    }
+  }
+
+  .cs_iconbox_title {
+    counter-increment: accordion-counter;
+    position: relative;
+    &:before {
+      content: counter(accordion-counter, decimal-leading-zero) ".  ";
+    }
+
+    a {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: var(--accent-color);
+
+    .cs_iconbox_icon {
+      border-color: var(--white-color);
+      img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+          saturate(7461%) hue-rotate(218deg) brightness(118%) contrast(108%);
+      }
+    }
+  }
+}
 /*===============================================================
   Iconbox Wrapper
 =================================================================*/
 
-.cs_iconbox_wrapper_style_1 {
+.cs_iconbox_wrapper_style_1,
+.cs_iconbox_wrapper_style_2,
+.cs_iconbox_wrapper_style_3,
+.cs_iconbox_wrapper_style_4 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -323,4 +439,72 @@
   @media (max-width: 767px) {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.cs_iconbox_wrapper_style_2 {
+  gap: 60px 0;
+
+  .cs_iconbox_style_6 {
+    &:nth-child(n + 4) {
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: var(--gray-color2);
+        left: 0;
+        top: 0;
+        position: absolute;
+        margin-top: -30px;
+      }
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .cs_iconbox_style_6 {
+      &:nth-child(n + 3) {
+        &::after {
+          content: "";
+          width: calc(100% + 15%);
+          height: 2px;
+          background-color: var(--gray-color2);
+          left: 0;
+          top: 0;
+          position: absolute;
+          margin-top: -30px;
+        }
+      }
+      &:nth-child(even) {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cs_iconbox_style_6 {
+      &:nth-child(n + 2) {
+        &::after {
+          content: "";
+          width: 100%;
+          height: 2px;
+          background-color: var(--gray-color2);
+          left: 0;
+          top: 0;
+          position: absolute;
+          margin-top: -30px;
+        }
+      }
+    }
+  }
+}
+
+.cs_iconbox_wrapper_style_3 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cs_iconbox_wrapper_style_4 {
+  grid-template-columns: repeat(2, 1fr);
 }

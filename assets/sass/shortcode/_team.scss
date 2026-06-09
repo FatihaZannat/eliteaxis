@@ -309,3 +309,68 @@
     }
   }
 }
+
+.cs_team_style_5 {
+  display: flex;
+  gap: 20px 40px;
+  align-items: start;
+
+  .cs_left {
+    flex-shrink: 0;
+  }
+
+  .cs_team_menu_item {
+    border-radius: 5px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    .cs_team_thumbnail {
+      width: 80px;
+      height: 80px;
+      border-radius: 5px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .cs_team_member_details {
+    width: min(530px, 100%);
+  }
+
+  .cs_team_member_img {
+    max-width: 424px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .cs_team_pane {
+    display: none;
+  }
+
+  .cs_team_pane.cs_active {
+    display: flex;
+    gap: 24px;
+  }
+
+  @media (max-width: 1199px) {
+    .cs_team_pane.cs_team_pane.cs_active {
+      flex-direction: column;
+    }
+    .cs_team_member_details {
+      width: 100%;
+    }
+  }
+}
