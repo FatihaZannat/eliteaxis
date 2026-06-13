@@ -60,8 +60,6 @@
 .cs_pricing_table_style_3 {
   padding: 0;
   border: 1px solid #d9d9d999;
-  // opacity: 0.6;
-
   display: flex;
 
   .cs_price_left,
@@ -74,6 +72,20 @@
 
   .cs_btn_style_1 {
     border-radius: 150px;
+    padding: 10px;
+
+    &:hover {
+      &::before {
+        background-color: var(--accent-color);
+      }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .cs_price_left,
+    .cs_price_right {
+      padding: 48px 18px;
+    }
   }
 }
 

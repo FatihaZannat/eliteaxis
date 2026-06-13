@@ -108,3 +108,31 @@
     animation: leftRight 03s infinite;
   }
 }
+
+.cs_about_style_6 {
+  .cs_about_right {
+    .cs_about_right_img {
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.cs_about_style_7 {
+  .cs_left_about_img {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cs_first_img {
+    padding: 13% 0;
+  }
+}

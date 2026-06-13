@@ -275,6 +275,20 @@
     width: calc(100vw - (100vw - 1615px) / 2);
   }
 }
+
+.cs_slider.cs_style_4 {
+  .cs_slider_in {
+    width: 69vw;
+  }
+  .swiper-slide {
+    width: 424px;
+  }
+  @media (max-width: 1199px) {
+    .cs_slider_in {
+      width: 100vw;
+    }
+  }
+}
 /*=======================================================
  Horizontal Slider
 =========================================================*/

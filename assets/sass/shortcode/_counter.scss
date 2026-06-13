@@ -15,6 +15,19 @@
   }
 }
 
+.cs_counter_style_4 {
+  display: flex;
+  gap: 30px;
+
+  .cs_counter_style_1 {
+    flex-shrink: 0;
+  }
+
+  p {
+    width: min(524px, 100%);
+  }
+}
+
 .cs_counter_wrapper_style_1 {
   display: flex;
   justify-content: space-between;

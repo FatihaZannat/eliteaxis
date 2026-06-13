@@ -263,6 +263,13 @@
       }
     }
   }
+  .cs_blog_thumbnail {
+    width: 100%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 .cs_blog_wrapper_style_1 {

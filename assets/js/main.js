@@ -265,6 +265,7 @@
 
       const speedVar =
         parseInt(container.getAttribute("data-speed"), 10) || 600;
+        const variableWidthVar = parseInt(container.getAttribute("data-variable-width"), 10) === 1;
       const loopVar = Boolean(
         parseInt(container.getAttribute("data-loop"), 10)
       );
@@ -281,6 +282,7 @@
       if (isNaN(gapVar)) {
         gapVar = 24; // fallback
       }
+      
 
       // Responsive breakpoints
       let breakpoints = {};
@@ -329,7 +331,8 @@
       const swiper = new Swiper(container, {
         loop: loopVar,
         speed: speedVar,
-        slidesPerView: slidesPerView,
+        slidesPerView: variableWidthVar ? "auto" : slidesPerView,  
+        variableWidth: variableWidthVar,
         slidesPerGroup: 1,
         spaceBetween: gapVar, // 👈 dynamic gap
         centeredSlides: centerVar,

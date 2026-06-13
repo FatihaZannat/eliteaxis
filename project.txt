@@ -6,7 +6,7 @@ Ending:
 3. home 3           = 4 day , circle text size & responsive problem , testimonial pagination in small screen.
 4. home 4           =  4
 5. home 5           = 4 recent project .  text slider rotate
-6. home 6           = 4
+6. home 6           = 4 about- responsive
 7. home 7           =  4
 8. home 8           = 4
 9. home 9           = 4
@@ -32,10 +32,9 @@ Ending Date: 04/07/2026
 Project: Eliteaxis html file
 
 Tasks Accomplished:
-home 1, home 2, home-4, home - 5
+home 1, home 2, home-4, home - 5, home-6, home-7 = 30%
 today:
-     home 6 = hero, why choose us , about ,service , Pricing, blog
-
+     home 7= heor, awards, why choose us
 
 Next Day Plan: 
-       Home - 6 = project, testimonial, Team, gallary
+       Home - 7 =  testimonial, Team, faq

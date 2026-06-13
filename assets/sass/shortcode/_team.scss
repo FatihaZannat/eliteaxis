@@ -374,3 +374,45 @@
     }
   }
 }
+
+.cs_team_style_6 {
+  position: relative;
+  padding-bottom: 40px;
+
+  border-bottom: 1px solid var(--light-blue-color);
+
+  & + & {
+    margin-top: 40px;
+  }
+  .cs_team_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cs_team_img {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: rotate(20deg);
+    transition: all 0.3s ease;
+    opacity: 0;
+    z-index: 2;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &:hover {
+    .cs_team_img {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    border-color: var(--accent-color);
+    .cs_text_btn_style_1 {
+      color: var(--accent-color);
+    }
+  }
+}

@@ -319,6 +319,7 @@
 .cs_iconbox_style_7 {
   border: 1px solid var(--accent-color);
   padding: 30px;
+  height: 100%;
 
   .cs_iconbox_icon {
     width: 70px;
@@ -358,6 +359,7 @@
   flex-wrap: wrap;
   padding: 20px 30px;
   transition: all 0.3s ease;
+  height: 100%;
 
   .cs_iconbox_icon {
     width: 40px;
@@ -396,6 +398,21 @@
           saturate(7461%) hue-rotate(218deg) brightness(118%) contrast(108%);
       }
     }
+  }
+}
+
+.cs_iconbox_style_9 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20xp 30px;
+
+  .cs_icon_info {
+    width: min(460px, 100%);
+  }
+
+  .cs_card_btn {
+    border: 1px solid var(--accent-color);
   }
 }
 /*===============================================================
@@ -503,8 +520,22 @@
 
 .cs_iconbox_wrapper_style_3 {
   grid-template-columns: repeat(4, 1fr);
+
+  @media (max-width: 1199px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 575px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .cs_iconbox_wrapper_style_4 {
   grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 1199px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.cs_iconbox-wrapper_style_5 {
 }
