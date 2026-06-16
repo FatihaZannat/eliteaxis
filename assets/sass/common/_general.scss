@@ -49,6 +49,14 @@
     font-size: 24px;
   }
 }
+.cs_fs_36 {
+  font-size: 36px;
+  line-height: 1.27778em;
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+}
 
 .cs_fs_48 {
   font-size: 48px;
@@ -564,46 +572,46 @@
   }
 }
 
-// .cs_player_btn_style_1 {
-//   width: 160px;
-//   height: 160px;
-//   border-radius: 50%;
-//   position: relative;
-//   transition: all 0.3s ease;
+.cs_player_btn_style_3 {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
 
-//   > * {
-//     position: relative;
-//     z-index: 1;
-//   }
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 
-//   &::before,
-//   &::after {
-//     content: "";
-//     width: 100%;
-//     height: 100%;
-//     position: absolute;
-//     left: 50%;
-//     top: 50%;
-//     z-index: 0;
-//     transform: translate(-50%, -50%) scale(1);
-//     border-radius: inherit;
-//     border: 6px solid currentColor;
-//     animation: pulseBorder 3s linear infinite;
-//   }
+  &::before,
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%) scale(1);
+    border-radius: inherit;
+    border: 6px solid currentColor;
+    animation: pulseBorder 3s linear infinite;
+  }
 
-//   &::after {
-//     animation-delay: 1.5s;
-//   }
+  &::after {
+    animation-delay: 1.5s;
+  }
 
-//   &:hover {
-//     transform: scale(0.75);
+  &:hover {
+    transform: scale(0.75);
 
-//     &::before,
-//     &::after {
-//       animation-play-state: paused;
-//     }
-//   }
-// }
+    &::before,
+    &::after {
+      animation-play-state: paused;
+    }
+  }
+}
 .cs_player_btn_style_2 {
   width: 100px;
   height: 100px;

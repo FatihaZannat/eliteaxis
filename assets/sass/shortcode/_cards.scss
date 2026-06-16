@@ -454,10 +454,18 @@
       object-fit: cover;
     }
   }
+
+  @media (max-width: 1199px) {
+    .cs_card_info {
+      padding: 30px 20px;
+    }
+  }
 }
 
 .cs_card_style_15 {
   padding: 30px;
+  position: relative;
+  z-index: 2;
 
   .cs_card_info {
     display: flex;
@@ -466,15 +474,65 @@
     flex-wrap: wrap;
   }
   .cs_card_thumbnail {
-    display: block;
+    position: relative;
+
     img {
       width: 100%;
       object-fit: cover;
+    }
+
+    .cs_card_btn {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      right: 30px;
+      top: 30px;
+      opacity: 0;
+      z-index: 5;
+
+      &:hover {
+        background-color: var(--accent-color);
+        color: var(--white-color);
+      }
+    }
+
+    &:hover {
+      .cs_card_btn {
+        opacity: 1;
+      }
+    }
+  }
+
+  .cs_project_title {
+    &:hover {
+      color: var(--accent-color);
     }
   }
 
   @media (max-width: 767px) {
     padding: 30px 20px;
+  }
+}
+
+.cs_card_style_16 {
+  padding: 30px;
+  display: flex;
+  gap: 20px 40px;
+  border: 1px solid var(--gray-color2);
+
+  .cs_card_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    .cs_btn_style_1 {
+      width: fit-content;
+    }
+  }
+  .cs_card_list {
+    list-style: disc;
+    color: var(--primary-color);
   }
 }
 
@@ -491,4 +549,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px 30px;
+
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

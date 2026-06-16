@@ -180,13 +180,15 @@
   }
 }
 
-.cs_blog_style_5 {
+.cs_blog_style_5,
+.cs_blog_style_7 {
+  display: flex;
   justify-content: space-between;
   gap: 20px;
   border-bottom: 1px solid var(--gray-color2);
   padding-bottom: 30px;
 
-  &:not(:first-child) {
+  & + & {
     margin-top: 30px;
   }
 
@@ -237,11 +239,6 @@
       width: 100%;
     }
   }
-  @media (max-width: 767px) {
-    .cs_blog_info {
-      width: 100%;
-    }
-  }
 }
 
 .cs_blog_style_6 {
@@ -272,8 +269,109 @@
   }
 }
 
+.cs_blog_style_7 {
+  align-items: center;
+  position: relative;
+
+  .cs_arrow {
+    color: transparent;
+  }
+  .cs_blog_thumbnail {
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%);
+    // width: 367px;
+    // height: 245px;
+    opacity: 0;
+    transition: all 01s ease;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &:hover {
+    .cs_arrow {
+      color: var(--accent-color);
+      width: 32px;
+      height: 32px;
+    }
+    .cs_blog_thumbnail {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .cs_blog_details {
+      width: min(300px, 100%);
+    }
+    .cs_blog_thumbnail {
+      max-width: 250px;
+      top: -10px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cs_blog_info {
+      width: 100%;
+    }
+    .cs_blog_thumbnail {
+      right: 0;
+    }
+  }
+}
+
+.cs_blog_style_8 {
+  display: flex;
+  gap: 26px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-color2);
+
+  & + & {
+    margin-top: 30px;
+  }
+
+  .cs_blog_info {
+    width: min(518px, 100%);
+  }
+
+  .cs_blog_title {
+    a {
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  .cs_blog_right {
+    display: flex;
+    gap: 20px 60px;
+    align-items: center;
+  }
+
+  .cs_card_btn {
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--accent-color);
+  }
+}
+
 .cs_blog_wrapper_style_1 {
   .container-fluid {
     padding: 0 70px;
+  }
+}
+
+.cs_blog_wrapper_style_2 {
+  position: relative;
+  .cs_img {
+    position: absolute;
+    bottom: 52px;
+    img {
+      transform: scaleX(-1);
+    }
   }
 }

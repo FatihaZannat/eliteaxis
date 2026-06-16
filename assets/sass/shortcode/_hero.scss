@@ -378,6 +378,229 @@
   }
 }
 
+.cs_hero_style_7 {
+  .cs_hero_content {
+    padding: 237px 0;
+  }
+  .container-fluid {
+    padding: 0 200px;
+  }
+  .cs_circle_section,
+  .cs_hero_btn_area {
+    display: flex;
+    align-items: center;
+    gap: 20px 30px;
+  }
+
+  .cs_video_block {
+    width: 140px;
+    height: 140px;
+    position: relative;
+    border-radius: 100%;
+    overflow: hidden;
+
+    svg {
+      z-index: 3;
+    }
+    &::after {
+      content: "";
+      inset: 0;
+      position: absolute;
+      background-color: #0d0d0d;
+      opacity: 0.3;
+    }
+  }
+
+  .cs_hero_btn_area {
+    gap: 20px;
+
+    .cs_comment_area {
+      padding-left: 50px;
+
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 15px;
+        background-color: var(--white-color);
+        width: 40px;
+        height: 1px;
+      }
+    }
+  }
+
+  .cs_text {
+    display: inline-block;
+    font-size: 300px;
+    font-weight: 600;
+    line-height: 210px;
+    font-family: var(--primary-font);
+    opacity: 0.2;
+    background: linear-gradient(180deg, #fff 0%, #0d0d0d 105.24%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .cs_img {
+    top: 248px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.5;
+  }
+
+  .cs_customer_part {
+    // width: min(450px, 100%);
+    padding-left: 63%;
+    position: absolute;
+    right: 200px;
+    bottom: 80px;
+
+    .cs_line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, #fff 0%, rgba(13, 13, 13, 0) 100%);
+    }
+
+    .cs_customer_img {
+      width: 100%;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .cs_customer_review_style_1 {
+      .cs_customer_avaters {
+        .cs_customer_img {
+          width: 50px;
+          height: 50px;
+
+          &:not(:first-child) {
+            margin-left: -25px;
+          }
+        }
+        .cs_top {
+          width: 50px;
+          height: 50px;
+          background-color: var(--white-color);
+          margin-left: -25px;
+        }
+      }
+    }
+  }
+  .cs_bg_effect_1,
+  .cs_bg_effect_2 {
+    position: absolute;
+    background-color: var(--accent-color);
+    opacity: 0.7;
+    filter: blur(150px);
+    width: 230px;
+    height: 230px;
+    aspect-ratio: 1/1;
+  }
+
+  .cs_bg_effect_1 {
+    left: 80px;
+    bottom: 80px;
+  }
+
+  .cs_bg_effect_2 {
+    top: 130px;
+    right: 120px;
+  }
+
+  @media (max-width: 1500px) {
+    .cs_customer_part {
+      right: 100px;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .container-fluid {
+      padding: 0 100px;
+    }
+  }
+  @media (max-width: 1199px) {
+    .cs_hero_content {
+      padding-bottom: 50px;
+    }
+
+    .cs_customer_part {
+      position: initial;
+      padding-left: 0;
+      width: 80%;
+      margin: 0 auto;
+      padding-bottom: 100px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .container-fluid {
+      padding: 0 50px;
+    }
+  }
+}
+
+.cs_hero_style_8 {
+  .container-fluid {
+    padding: 0 200px;
+  }
+
+  .cs_hero_right {
+    background-color: var(--gray-color);
+    width: 50vw;
+    .cs_hero_content {
+      width: min(700px, 100%);
+      margin: auto;
+      padding: 185px 0 330px;
+    }
+
+    .cs_bg_img {
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .cs_hero_left {
+    width: min(655px, 100%);
+
+    .cs_hero_left_img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cs_side_content {
+    flex-direction: row;
+    align-items: end;
+    gap: 10px;
+    top: 41%;
+  }
+
+  .cs_img {
+    position: relative;
+    width: 1395px;
+    z-index: 5;
+    border-radius: 0 20px 20px 0;
+    margin-top: -140px;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .cs_player_btn_style_3 {
+      position: absolute;
+      right: 40px;
+      bottom: 40px;
+    }
+  }
+}
+
 .cs_side_content {
   z-index: 10;
   display: flex;

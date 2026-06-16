@@ -430,6 +430,21 @@
   }
 }
 
+.cs_why_choose_style_1 {
+  .cs_why_choose_left {
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cs_why_choose_right {
+    padding-left: 46px;
+  }
+}
+
 /*=======================================================
   Portfolio
 =========================================================*/
@@ -631,5 +646,24 @@ textarea.cs_form_field {
     width: 200px;
     height: 200px;
     padding: 52px 20px;
+  }
+}
+
+/*=======================================================
+    list 
+=========================================================*/
+.cs_list_style_1 {
+  list-style: disc;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0;
+
+  li {
+    margin-bottom: 28px;
+    font-size: 24px;
+    font-weight: 1.33333em;
+    font-family: var(--primary-font);
+    font-weight: 600;
+    color: var(--primary-color);
   }
 }

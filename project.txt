@@ -8,7 +8,7 @@ Ending:
 5. home 5           = 4 recent project .  text slider rotate
 6. home 6           = 4 about- responsive
 7. home 7           =  4
-8. home 8           = 4
+8. home 8           = 4 , team card height , bottom padding is decrease in hover effect
 9. home 9           = 4
 10. home 10         = 4
 11. about           = 2
@@ -32,9 +32,9 @@ Ending Date: 04/07/2026
 Project: Eliteaxis html file
 
 Tasks Accomplished:
-home 1, home 2, home-4, home - 5, home-6, home-7 = 30%
+home 1, home 2, home-4, home - 5, home-6, home-7 
 today:
-     home 7= heor, awards, why choose us
+     home 7= complete
 
 Next Day Plan: 
-       Home - 7 =  testimonial, Team, faq
+       Home - 8
