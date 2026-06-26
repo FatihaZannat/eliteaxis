@@ -3,7 +3,8 @@
 =================================================================*/
 .cs_iconbox_style_1,
 .cs_iconbox_style_3,
-.cs_iconbox_style_7 {
+.cs_iconbox_style_7,
+.cs_iconbox_style_9 {
   padding: 30px;
   height: fit-content;
   margin-top: auto;
@@ -151,7 +152,8 @@
 }
 
 .cs_iconbox_style_3,
-.cs_iconbox_style_7 {
+.cs_iconbox_style_7,
+.cs_iconbox_style_9 {
   transition: all 0.3s ease;
   padding: 40px;
 
@@ -316,7 +318,8 @@
   }
 }
 
-.cs_iconbox_style_7 {
+.cs_iconbox_style_7,
+.cs_iconbox_style_9 {
   border: 1px solid var(--accent-color);
   padding: 30px;
   height: 100%;
@@ -401,6 +404,79 @@
   }
 }
 
+.cs_iconbox_style_9 {
+  padding: 40px 20px;
+
+  .cs_iconbox_in {
+    width: min(344px, 100%);
+    margin: auto;
+  }
+  .cs_iconbox_icon {
+    width: 80px;
+    height: 80px;
+  }
+  .cs_number {
+    opacity: 1;
+  }
+
+  &:hover {
+    .cs_iconbox_icon {
+      background-color: var(--blue-color);
+      transform: rotateY(360deg);
+    }
+  }
+
+  @media (max-width: 1400px) {
+    padding: 20px;
+  }
+  @media (max-width: 667px) {
+    .cs_iconbox_in {
+      width: 100%;
+    }
+  }
+}
+
+.cs_iconbox_style_10 {
+  width: min(365px, 100%);
+
+  .cs_iconbox_icon {
+    width: 80px;
+    height: 80px;
+
+    svg {
+      width: 100%;
+    }
+  }
+}
+.cs_iconbox_style_11 {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+  padding: 30px;
+  border: 1px solid var(--gray-color2);
+  height: 100%;
+
+  .cs_iconbox_icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      filter: brightness(0) saturate(100%) invert(41%) sepia(86%) saturate(365%)
+        hue-rotate(131deg) brightness(93%) contrast(94%);
+    }
+  }
+
+  @media (max-width: 1199px) {
+    align-items: start;
+  }
+  @media (max-width: 575px) {
+    padding: 25px 15px;
+    flex-direction: column;
+  }
+}
+
 /*===============================================================
   Iconbox Wrapper
 =================================================================*/
@@ -408,7 +484,10 @@
 .cs_iconbox_wrapper_style_1,
 .cs_iconbox_wrapper_style_2,
 .cs_iconbox_wrapper_style_3,
-.cs_iconbox_wrapper_style_4 {
+.cs_iconbox_wrapper_style_4,
+.cs_iconbox_wrapper_style_5,
+.cs_iconbox_wrapper_style_6,
+.cs_iconbox_wrapper_style_7 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -519,6 +598,116 @@
   grid-template-columns: repeat(2, 1fr);
 
   @media (max-width: 1199px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.cs_iconbox_wrapper_style_5 {
+  grid-template-columns: repeat(4, 1fr);
+
+  .cs_card_style_17 {
+    grid-column-end: span 2;
+  }
+
+  @media (max-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 667px) {
+    grid-template-columns: repeat(1, 1fr);
+
+    .cs_card_style_17 {
+      grid-column-end: span 1;
+    }
+  }
+}
+
+.cs_iconbox_wrapper_style_6 {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+
+  .cs_iconbox_style_10 {
+    &:nth-child(odd) {
+      margin-left: auto;
+    }
+  }
+
+  .cs_middle_img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .cs_middle_img {
+      max-width: 340px;
+    }
+  }
+  @media (max-width: 1199px) {
+    .cs_middle_img {
+      max-width: 300px;
+    }
+    .cs_iconbox_style_10 {
+      width: min(300px, 100%);
+    }
+  }
+
+  @media (max-width: 991px) {
+    gap: 30px;
+
+    .cs_iconbox_style_10 {
+      width: 100%;
+    }
+
+    .cs_iconbox_icon {
+      width: 50px;
+      height: 50px;
+    }
+    .cs_middle_img {
+      position: relative;
+      grid-row: auto;
+      max-width: 100%;
+      grid-column: 1 / span 2;
+    }
+  }
+
+  @media (max-width: 767px) {
+    gap: 30px;
+
+    .cs_iconbox_icon {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    grid-template-columns: repeat(1, 1fr);
+
+    .cs_middle_img {
+      grid-column: 1;
+    }
+
+    .cs_iconbox_style_10 {
+      width: 100%;
+      &:nth-child(even) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.cs_iconbox_wrapper_style_7 {
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 991px) {
     grid-template-columns: repeat(1, 1fr);
   }
 }

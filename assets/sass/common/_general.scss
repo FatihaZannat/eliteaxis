@@ -37,6 +37,9 @@
   font-size: 30px;
   line-height: 1.17em;
 
+  @media (max-width: 1199px) {
+    font-size: 28px;
+  }
   @media (max-width: 767px) {
     font-size: 24px;
   }
@@ -717,11 +720,11 @@
 
 .cs_section_subtitle_style_2 {
   display: inline-block;
-  letter-spacing: 1.4px;
+  // letter-spacing: 1.4px;
   padding: 10px 20px;
   border: 1px solid currentColor;
   font-family: var(--primary-font);
-  font-weight: 600;
+  // font-weight: 600;
   text-transform: uppercase;
   border-radius: 200px;
 }
@@ -742,7 +745,7 @@
 .cs_progress {
   background-color: var(--light-blue-color);
   border-radius: 40px;
-  overflow: hidden;
+  // overflow: hidden;
 
   .cs_progress_in {
     height: 5px;
@@ -898,6 +901,11 @@
 @keyframes bigger {
   50% {
     transform: scale(1);
+  }
+}
+@keyframes upDownArrow {
+  50% {
+    transform: rotate(-90deg) translateY(-5px);
   }
 }
 

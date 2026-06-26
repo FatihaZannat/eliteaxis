@@ -32,9 +32,9 @@ Ending Date: 04/07/2026
 Project: Eliteaxis html file
 
 Tasks Accomplished:
-home 1, home 2, home-4, home - 5, home-6, home-7 
+home 1, home 2, home-4, home - 5, home-6, home-7 ,home-8, home-10
 today:
-     home 7= complete
+     home 10
 
-Next Day Plan: 
-       Home - 8
+Next Day Plan: home 10
+       

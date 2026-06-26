@@ -245,10 +245,35 @@
       }
     }
   }
+
+  @media (max-width: 1400px) {
+    .cs_single_product_nav {
+      top: -36px;
+    }
+  }
+  @media (max-width: 1199px) {
+    .cs_single_product_nav {
+      right: -38%;
+    }
+  }
+  @media (max-width: 991px) {
+    .cs_single_product_nav {
+      right: auto;
+      top: 195%;
+    }
+  }
 }
 
 .cs_slider.cs_style_2,
 .cs_slider.cs_style_5 {
+  .cs_testimonial_thumbnail {
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
   .cs_single_product_nav {
     max-height: 520px;
     position: initial;
@@ -452,6 +477,14 @@
       font-size: 128px;
       line-height: 1em;
       flex-direction: column-reverse;
+    }
+  }
+
+  &.cs_type_7 {
+    padding: 0;
+
+    .cs_slider_inner {
+      gap: 40px;
     }
   }
 

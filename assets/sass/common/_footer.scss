@@ -1,7 +1,9 @@
 /*=======================================================================
  07. Footer Section
 =========================================================================*/
-.cs_footer_style_1 {
+.cs_footer_style_1,
+.cs_footer_style_2,
+.cs_footer_style_3 {
   .cs_footer_menu {
     li:not(:last-child) {
       margin-bottom: 22px;
@@ -108,4 +110,13 @@
       }
     }
   }
+}
+
+.cs_footer_style_2 {
+  max-width: 1860px;
+  margin: 0 auto;
+}
+.cs_footer_style_3 {
+  max-width: 1900px;
+  margin: 0 auto;
 }

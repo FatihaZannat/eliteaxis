@@ -136,3 +136,137 @@
     padding: 13% 0;
   }
 }
+
+.cs_about_style_8 {
+  .cs_about_card_style_1 {
+    padding: 30px 38px;
+    background-color: var(--light-blue-color);
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    bottom: 95px;
+  }
+
+  .cs_about_card_style_2 {
+    padding: 30px;
+    border: 1px solid var(--accent-color);
+  }
+
+  .cs_about_list {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-family: var(--primary-font);
+    font-weight: 600;
+    line-height: 1.33333em;
+
+    .cs_line {
+      padding-left: 50px;
+
+      &::after {
+        width: 40px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .cs_about_right {
+    .cs_btn_style_1 {
+      margin-top: 40px;
+    }
+  }
+
+  .cs_line {
+    position: relative;
+    padding-left: 100px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      background-color: var(--accent-color);
+      width: 80px;
+      height: 2px;
+    }
+  }
+
+  .cs_card_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+  }
+}
+
+.cs_about_style_9 {
+  .cs_about_left {
+    padding-right: 50px;
+  }
+  .cs_icon {
+    right: 0;
+    bottom: 30px;
+  }
+
+  .cs_about_list {
+    padding: 40px 40px 40px 160px;
+    list-style: disc;
+    color: var(--white-color);
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0 100%, 16% 51%, 0% 0%);
+
+    li {
+      border-bottom: 1px solid var(--gray-color2);
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      padding-bottom: 20px;
+    }
+  }
+
+  .cs_counter_wrapper_style_1 {
+    gap: 20px 14px;
+  }
+
+  .cs_down_btn_style_2 {
+    border-radius: 150px;
+    border: 1px solid var(--accent-color);
+    display: inline-flex;
+    padding: 8px 10px;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 1px;
+    transform: rotate(90deg);
+    position: absolute;
+    bottom: 118px;
+    left: -38px;
+
+    svg {
+      transform: rotate(-90deg);
+      animation: upDownArrow 1s infinite;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .cs_about_list {
+      padding: 20px 20px 20px 140px;
+    }
+  }
+}
+
+.cs_about_style_10 {
+  max-width: 1900px;
+  margin: 0 auto;
+
+  .cs_about_right {
+    .cs_img {
+      width: 100%;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

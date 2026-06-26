@@ -34,3 +34,9 @@
   gap: 20px 40px;
   flex-wrap: wrap;
 }
+
+.cs_counter_wrapper_style_2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}

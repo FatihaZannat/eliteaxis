@@ -3,7 +3,8 @@
 =================================================================*/
 .cs_pricing_table_style_1,
 .cs_pricing_table_style_2,
-.cs_pricing_table_style_3 {
+.cs_pricing_table_style_3,
+.cs_pricing_table_style_4 {
   padding: 30px;
 
   .cs_pricing_features_list {
@@ -89,6 +90,45 @@
   }
 }
 
+.cs_pricing_table_style_4 {
+  padding: 40px 60px;
+  transition: all 0.3s ease;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .cs_btn_style_1 {
+    border-radius: 150px;
+  }
+
+  &:hover {
+    background-color: var(--accent-color);
+
+    .cs_pricing_features_list {
+      img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(100%)
+          saturate(1%) hue-rotate(259deg) brightness(101%) contrast(101%);
+      }
+    }
+    .cs_btn_style_1 {
+      background-color: var(--primary-color);
+    }
+  }
+
+  @media (max-width: 1199px) {
+    flex-wrap: wrap;
+  }
+  @media (max-width: 991px) {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
 .cs_pricing_wrapper_style_1 {
   position: relative;
 
@@ -103,5 +143,17 @@
     img {
       width: 100%;
     }
+  }
+}
+
+.cs_pricing_wrapper_style_2 {
+  margin: 0 30px;
+
+  .cs_img {
+    transform: scaleX(-1);
+    right: 0;
+    bottom: 0;
+    filter: brightness(0) saturate(100%) invert(46%) sepia(0%) saturate(0%)
+      hue-rotate(347deg) brightness(88%) contrast(85%);
   }
 }

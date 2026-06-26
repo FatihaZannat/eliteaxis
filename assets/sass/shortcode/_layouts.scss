@@ -445,6 +445,49 @@
   }
 }
 
+.cs_why_choose_style_2 {
+  .cs_why_chose_img_wrapper_1 {
+    .cs_why_chose_img {
+      padding-left: 14%;
+    }
+  }
+
+  .cs_circle_text {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.cs_why_choose_style_3 {
+  .cs_why_chose_images {
+    display: flex;
+    align-items: start;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .cs_img_1 {
+    padding-bottom: 12%;
+    .cs_circle_text {
+      left: 50%;
+      bottom: 0px;
+      transform: translateX(-50%);
+
+      .cs_play_btn {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .cs_img_1,
+  .cs_img_2 {
+    flex: 1;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
 /*=======================================================
   Portfolio
 =========================================================*/
@@ -488,6 +531,93 @@
       .cs_portfolio_img {
         padding-left: 0;
       }
+    }
+  }
+}
+
+.cs_portfolio_style_2 {
+  padding: 30px;
+
+  .cs_portfolio_meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    span {
+      border-radius: 150px;
+      border: 1px solid var(--accent-color);
+      width: 100px;
+      height: 25px;
+    }
+  }
+
+  .cs_portfolio_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    cursor: pointer;
+  }
+
+  .cs_card_btn {
+    pointer-events: none;
+  }
+
+  .cs_img {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cs_circle_text {
+    right: 30px;
+    bottom: -25%;
+    width: 160px;
+    height: 160px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &.active {
+    .cs_portfolio_head {
+      margin-bottom: 30px;
+      pointer-events: none;
+    }
+
+    .cs_portfolio_body {
+      margin-bottom: 20px;
+    }
+    .cs_card_btn {
+      pointer-events: initial;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .cs_circle_text {
+      right: 0px;
+      width: 120px;
+      height: 120px;
+    }
+    p {
+      position: relative;
+      z-index: 2;
+      br {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    .cs_img {
+      height: 150px;
+    }
+    .cs_circle_text {
+      width: 100px;
+      height: 100px;
     }
   }
 }
@@ -549,6 +679,57 @@
 }
 
 /*=======================================================
+  Solution 
+=========================================================*/
+
+.cs_solution_wrapper_style_1 {
+  max-width: 1900px;
+  margin: 0 auto;
+
+  .cs_left_solution,
+  .cs_right_solution {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .cs_img {
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    .cs_card_btn {
+      width: 130px;
+      height: 130px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 01s ease;
+      i {
+        width: 40px;
+      }
+
+      &:hover {
+        background-color: var(--light-blue-color);
+        color: var(--accent-color);
+      }
+    }
+
+    &:hover {
+      .cs_card_btn {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+/*=======================================================
   Form
 =========================================================*/
 .cs_form_field {
@@ -585,6 +766,12 @@ textarea.cs_form_field {
     img {
       width: 100%;
       object-fit: cover;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .cs_contact_form {
+      padding-right: 0;
     }
   }
 }
@@ -665,5 +852,46 @@ textarea.cs_form_field {
     font-family: var(--primary-font);
     font-weight: 600;
     color: var(--primary-color);
+  }
+}
+
+/*=======================================================
+  Brand Logo
+=========================================================*/
+.cs_brand_style_1 {
+  margin: 0 60px;
+  border-radius: 30px;
+
+  .cs_brand_text {
+    color: var(--white-color);
+    font-family: var(--primary-font);
+    font-size: 160px;
+    font-weight: 600;
+    line-height: 1em;
+  }
+
+  .cs_circle_text {
+    position: relative;
+  }
+
+  .cs_brands {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .cs_brand_in {
+    width: min(1240px, 100%);
+    padding: 120px 0;
+    margin: 0 auto;
+  }
+}
+
+.cs_service_wrapper_style_1 {
+  max-width: 1860px;
+  margin: 0 auto;
+  .container-fluid {
+    padding: 0 30px;
   }
 }
