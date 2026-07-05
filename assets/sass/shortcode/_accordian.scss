@@ -5,7 +5,8 @@
 .cs_accordian.cs_style_2,
 .cs_accordian.cs_style_3,
 .cs_accordian.cs_style_4,
-.cs_accordian.cs_style_5 {
+.cs_accordian.cs_style_5,
+.cs_accordian.cs_style_6 {
   .cs_accordian_toggler {
     display: inline-block;
     width: 20px;
@@ -88,7 +89,8 @@
     padding: 27px 80px 27px 30px;
   }
   .cs_accordian_body {
-    padding: 0 310px 27px 30px;
+    padding: 0 80px 27px 30px;
+    width: min(930px, 100%);
   }
 
   .cs_accordian_title {
@@ -132,9 +134,32 @@
       }
     }
   }
+
+  @media (max-width: 575px) {
+    .cs_accordian_head {
+      padding: 16px 60px 16px 20px;
+    }
+
+    .cs_accordian_body {
+      padding: 0 60px 16px 20px;
+    }
+    .cs_accordian_title {
+      padding-left: 26px;
+    }
+
+    .cs_accordian_toggler {
+      width: 30px;
+      height: 30px;
+      &::before {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
 }
 
-.cs_accordian.cs_style_4 {
+.cs_accordian.cs_style_4,
+.cs_accordian.cs_style_6 {
   counter-increment: accordion-counter;
   border-bottom: 1px solid var(--gray-color2);
   padding-bottom: 20px;
@@ -167,21 +192,28 @@
     padding-left: 42px;
     color: var(--secondary-color);
 
+    a {
+      pointer-events: none;
+    }
+
     &:before {
       content: counter(accordion-counter, decimal-leading-zero) ".";
       position: absolute;
       left: 0;
       top: 0;
-      font-family: var(--primary-font);
-      font-size: 30px;
-      font-style: normal;
-      font-weight: 600;
     }
   }
 
+  .cs_accordian_toggler {
+    top: 10px;
+  }
+
   .cs_accordian_body {
-    padding: 0 800px 20px 62px;
+    padding: 0 40px 20px 62px;
     margin-top: -4px;
+    width: min(460px, 100%);
+    position: relative;
+    z-index: 2;
   }
 
   .cs_iconbox_thumbnail {
@@ -196,6 +228,10 @@
     }
     .cs_accordian_title {
       color: var(--primary-color);
+
+      a {
+        pointer-events: initial;
+      }
     }
     .cs_accordian_toggler {
       pointer-events: initial;
@@ -204,6 +240,39 @@
       i {
         color: var(--white-color);
       }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cs_accordian_body {
+      padding: 20px;
+    }
+
+    .cs_iconbox_thumbnail {
+      width: 200px;
+    }
+  }
+  @media (max-width: 575px) {
+    .cs_accordian_head {
+      h3 {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+
+    .cs_accordian_toggler {
+      width: 35px;
+      height: 35px;
+      top: 20px;
+    }
+
+    .cs_accordian_title {
+      padding-left: 30px;
+    }
+
+    .cs_iconbox_thumbnail {
+      width: 120px;
     }
   }
 }
@@ -217,6 +286,58 @@
     }
   }
 }
+
+.cs_accordian.cs_style_6 {
+  border: 1px solid var(--gray-color2);
+  border-radius: 10px;
+  padding-bottom: 0;
+  &:not(:last-child) {
+    margin-bottom: 0px !important;
+  }
+  & + & {
+    margin-top: 30px;
+  }
+  .cs_accordian_toggler {
+    border: 0;
+    top: 30px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .cs_accordian_head {
+    padding: 40px;
+  }
+  .cs_accordian_title {
+    color: var(--primary-color);
+  }
+  .cs_accordian_body {
+    width: min(800px, 100%);
+    color: var(--white-color);
+    margin-top: -24px;
+    padding: 0 40px 40px;
+  }
+
+  &.active {
+    background-color: var(--accent-color);
+    .cs_accordian_title {
+      color: var(--white-color);
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .cs_accordian_toggler {
+      i {
+        color: var(--white-color);
+        transform: rotate(45deg);
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
 /*===================================================
  Accordians Wrappers
 =====================================================*/
@@ -226,14 +347,15 @@
   .cs_accordian.cs_style_1,
   .cs_accordian.cs_style_2,
   .cs_accordian.cs_style_3,
-  .cs_accordian.cs_style_5 {
+  .cs_accordian.cs_style_5,
+  .cs_accordian.cs_style_6 {
     &:not(:last-child) {
       margin-bottom: 20px;
     }
   }
 }
 
-.cs_accordian_section {
+.cs_accordians_wrapper_2 {
   .cs_img {
     left: 0;
     bottom: 0;
@@ -244,6 +366,12 @@
   @media (max-width: 991px) {
     .cs_img {
       display: none;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .cs_customer_review_style_3 {
+      flex-wrap: wrap;
     }
   }
 }

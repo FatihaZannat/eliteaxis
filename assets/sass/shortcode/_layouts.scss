@@ -2,6 +2,7 @@
   17. Layouts
 =========================================================*/
 .cs_circle_text_img {
+  width: 100%;
   position: relative;
 
   .cs_img {
@@ -42,6 +43,13 @@
   }
 }
 
+@media (max-width: 575px) {
+  .cs_circle_text {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 /*=======================================================
   Customer Review
 =========================================================*/
@@ -52,6 +60,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 
   .cs_customer_avaters {
     display: flex;
@@ -418,6 +427,52 @@
   }
 }
 
+.cs_project_wrapper_style_3 {
+  .cs_project_info {
+    padding: 40px 40px 30px 40px;
+    .cs_info_in {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .cs_challenges {
+    .cs_challenges_in h3 {
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--gray-color2);
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  .cs_project_type {
+    padding: 20px 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: var(--gray-color2);
+      position: absolute;
+      left: 50%;
+      top: 0;
+    }
+  }
+  .cs_project_details_img {
+    width: 100%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
 .cs_why_choose_img_wrapper {
   img {
     width: 100%;
@@ -443,11 +498,30 @@
   .cs_why_choose_right {
     padding-left: 46px;
   }
+
+  @media (max-width: 991px) {
+    .cs_why_choose_right {
+      padding-left: 0;
+    }
+  }
+  @media (max-width: 767px) {
+    .cs_list_style_1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 }
 
 .cs_why_choose_style_2 {
-  .cs_why_chose_img_wrapper_1 {
-    .cs_why_chose_img {
+  .cs_why_choose_img {
+    width: 100%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cs_why_choose_img_wrapper_1 {
+    .cs_why_choose_img {
       padding-left: 14%;
     }
   }
@@ -459,7 +533,7 @@
 }
 
 .cs_why_choose_style_3 {
-  .cs_why_chose_images {
+  .cs_why_choose_images {
     display: flex;
     align-items: start;
     gap: 24px;
@@ -486,6 +560,16 @@
   img {
     width: 100%;
     object-fit: cover;
+  }
+
+  @media (max-width: 575px) {
+    .cs_why_choose_images {
+      flex-direction: column;
+    }
+    .cs_img_1,
+    .cs_img_2 {
+      width: 100%;
+    }
   }
 }
 /*=======================================================
@@ -622,6 +706,52 @@
   }
 }
 
+.cs_portfolio_style_3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+
+  .cs_portfolio_img {
+    width: 100%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cs_portfolio_left {
+    padding-right: 40px;
+  }
+  .cs_portfolio_right {
+    padding-left: 40px;
+    position: relative;
+    padding-top: 80px;
+
+    .cs_circle_text {
+      right: 60px;
+      top: 0;
+    }
+  }
+
+  .cs_portfolio_card {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+
+    .cs_portfolio_left {
+      padding-right: 0;
+    }
+
+    .cs_portfolio_right {
+      padding-left: 0;
+    }
+  }
+}
+
 /*=======================================================
   Workfolw
 =========================================================*/
@@ -674,6 +804,12 @@
       position: absolute;
       left: 0;
       top: 0;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .cs_right_workflow {
+      margin-left: 20px;
     }
   }
 }
@@ -752,6 +888,10 @@ textarea.cs_form_field {
 .cs_contact_style_1 {
   .cs_contact_form {
     padding-right: 40px;
+
+    .cs_select {
+      border: 0;
+    }
   }
   .cs_circle_text {
     width: 150px;
@@ -766,6 +906,110 @@ textarea.cs_form_field {
     img {
       width: 100%;
       object-fit: cover;
+    }
+  }
+
+  .cs_contact_widgets {
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
+      a {
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+    }
+  }
+
+  .cs_contact_map {
+    height: 360px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    iframe {
+      display: block;
+      transform: 0;
+      width: 100%;
+      height: 100%;
+      filter: brightness(120%) grayscale(0.6);
+    }
+  }
+
+  .cs_input_wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .ts-control {
+    height: 25px;
+    width: 100%;
+    border: none !important;
+    outline: none;
+    padding: 0 !important;
+    background: transparent !important;
+    overflow: hidden;
+
+    input {
+      width: min(70px, 100%);
+
+      &::placeholder {
+        color: var(--primary-color);
+      }
+    }
+
+    &::after {
+      content: "\f078";
+      font-family: "Font Awesome 7 Free";
+      font-size: 16px;
+      font-weight: 900;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--secondary-color);
+    }
+  }
+
+  .ts-control,
+  .ts-control input,
+  .ts-dropdown {
+    font-size: 16px;
+    line-height: 1.5625em !important;
+    color: var(--secondary-color);
+  }
+  .ts-dropdown {
+    border: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.3s ease;
+    display: block !important;
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      border: 1px solid var(--accent-color);
+    }
+
+    .option {
+      padding: 10px 15px;
+      font-size: 16px;
+      line-height: 1.5em;
+      color: var(--accent-color);
+      transition: all 0.4s ease;
+
+      &.active {
+        background-color: var(--gray-color);
+      }
     }
   }
 
@@ -834,6 +1078,15 @@ textarea.cs_form_field {
     height: 200px;
     padding: 52px 20px;
   }
+
+  @media (max-width: 767px) {
+    width: calc(100% - 20px);
+    padding: 80px 0;
+    .cs_counter_style_2 {
+      width: 180px;
+      height: 180px;
+    }
+  }
 }
 
 /*=======================================================
@@ -846,12 +1099,26 @@ textarea.cs_form_field {
   margin: 0;
 
   li {
-    margin-bottom: 28px;
     font-size: 24px;
-    font-weight: 1.33333em;
+    line-height: 1.33333em;
     font-family: var(--primary-font);
     font-weight: 600;
     color: var(--primary-color);
+    margin-bottom: 28px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:nth-child(7) {
+      margin-bottom: 0;
+    }
+  }
+  @media (max-width: 767px) {
+    li {
+      &:nth-child(7) {
+        margin-bottom: 28px;
+      }
+    }
   }
 }
 
@@ -878,13 +1145,40 @@ textarea.cs_form_field {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
   }
   .cs_brand_in {
     width: min(1240px, 100%);
-    padding: 120px 0;
+    padding: 120px 20px;
     margin: 0 auto;
+  }
+
+  @media (max-width: 991px) {
+    margin: 0 10px;
+    .cs_brand_text {
+      font-size: 140px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    margin: 0 10px;
+    .cs_brand_in {
+      padding: 80px 10px;
+    }
+
+    .cs_brand_text {
+      font-size: 100px;
+    }
+  }
+  @media (max-width: 575px) {
+    .cs_brand_in {
+      padding: 40px 10px;
+    }
+    .cs_brand_text {
+      font-size: 70px;
+    }
   }
 }
 
@@ -893,5 +1187,54 @@ textarea.cs_form_field {
   margin: 0 auto;
   .container-fluid {
     padding: 0 30px;
+  }
+}
+
+.cs_service_img {
+  width: 100%;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+// /*===========================================================
+//   Pagination Box
+// =============================================================*/
+.cs_pagination_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  .cs_pagination_item,
+  .cs_pagination_arrow {
+    border-radius: 10px;
+    background: transparent;
+    height: 40px;
+    width: 40px;
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+
+    &.active {
+      background-color: var(--accent-color);
+      color: var(--white-color);
+      pointer-events: none;
+    }
+  }
+
+  a.cs_pagination_item:hover {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+  }
+
+  .cs_pagination_arrow {
+    color: var(--primary-color);
+    // background-color: var(--accent-color);
+
+    &:hover {
+      color: var(--accent-color);
+      background-color: transparent;
+    }
   }
 }

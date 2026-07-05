@@ -1,50 +1,28 @@
 /*============================================================
   09. Sidebar
 ==============================================================*/
-.cs_sidebar_style_1 {
+.cs_sidebar_style_1,
+.cs_sidebar_style_2,
+.cs_recent_post_wrapper {
   display: grid;
-  gap: 30px;
+  gap: 20px;
 
-  .cs_sidebar_widget {
-    padding: 40px;
-  }
-
-  .cs_service_category_list {
-    display: grid;
-    gap: 30px;
-
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: var(--white-color);
-      padding: 15px 20px 14px;
-      border-radius: 5px;
-      border: 1px solid var(--white-color);
-    }
-
-    li {
-
-
-      &:hover {
-        a {
-          background-color: transparent;
-          border-color: var(--accent-color);
-        }
-      }
-    }
-
+  .cs_sidebar_widget_in {
+    padding: 30px;
   }
 
   .cs_search {
-    border-radius: 8px;
+    border: 1px solid var(--gray-color2);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
 
     input {
       width: 100%;
       border: 0;
       outline: 0;
       padding: 16px 20px;
-      border: 1px solid var(--gray-color2);
+      // border: 1px solid var(--gray-color2);
 
       &:focus {
         border-color: var(--accent-color);
@@ -53,114 +31,73 @@
 
     .cs_search_button {
       height: 100%;
+      width: 68px;
       border: 0;
       outline: 0;
-      padding-right: 20px;
       position: absolute;
       top: 0;
       right: 0;
       transition: all 0.3s ease;
+      background-color: var(--accent-color);
+      color: var(--white-color);
 
       &:hover {
-        color: var(--accent-color);
+        opacity: 0.9;
       }
     }
   }
 
-  .cs_recent_post_wrapper {
-    display: grid;
-    gap: 30px;
+  .cs_service_list_style_2 {
+    counter-reset: accordion-counter;
+    li {
+      border: 1px solid var(--gray-color2);
+      padding: 15px;
+      border-radius: 5px;
+      color: var(--primary-color);
+      transition: all 0.3s ease;
+      counter-increment: accordion-counter;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        position: relative;
+        padding-left: 20px;
+
+        &:before {
+          content: counter(accordion-counter) ".";
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      &:hover {
+        background-color: var(--accent-color);
+        color: var(--white-color);
+      }
+    }
   }
 
-  @media (max-width:1399px) {
-    .cs_sidebar_widget {
-      padding: 30px 20px;
-    }
+  .cs_btn_style_1 {
+    font-size: 16px;
   }
 }
 
 .cs_sidebar_style_2 {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  .cs_clients_list_container {
-    padding: 40px;
-  }
-
-  .cs_clients_list {
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
-
-    li {
-      padding-bottom: 30px;
-      border-bottom: 1px solid var(--border-color);
-
-      &:last-child {
-        padding-bottom: 0;
-        border-bottom: 0;
-      }
-    }
-  }
-
-  .cs_avata_style_1 {
+  gap: 20px;
+  .cs_tags_links {
     display: flex;
     gap: 10px;
-    align-items: center;
+    flex-wrap: wrap;
 
-    .cs_avatar_icon {
-      width: 50px;
-      height: 50px;
-      flex: none;
-    }
-  }
-
-  @media (max-width:991px) {
-    .cs_clients_list_container {
-      padding: 30px 20px;
-    }
-  }
-}
-
-.cs_sidebar_style_3 {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  .cs_widget_title {
-    position: relative;
-    padding-left: 24px;
-
-    &::before {
-      content: "";
-      width: 16px;
-      height: 16px;
-      position: absolute;
-      left: 0;
-      top: 9px;
-      border-radius: 50%;
-      background-color: var(--accent-color);
-    }
-  }
-
-  .cs_service_list_wrapper {
-    padding: 40px 30px;
-  }
-
-  .cs_service_list {
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
-
-    a {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 25px;
-      border-radius: 5px;
-      background-color: var(--white-color);
+    .cs_tag_link {
+      padding: 10px 20px;
+      background-color: var(--gray-color);
 
       &:hover {
         color: var(--white-color);
@@ -169,113 +106,27 @@
     }
   }
 
-  .cs_contact_card {
-    padding: 20px;
-
-    .cs_contact_card_inner {
-      width: 100%;
-      height: 100%;
-      min-height: 600px;
-      padding: 30px;
-      border-radius: inherit;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      position: relative;
-
-      &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #CAA05C 100%);
-      }
-
-      >* {
-        position: relative;
-        z-index: 1;
-      }
-
-      .cs_contact_icon {
-        width: 50px;
-        height: 50px;
-
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-      a:hover {
-        color: var(--primary-color);
-      }
-    }
+  .cs_gallery_post_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 30px;
   }
 
-  @media (max-width:1399px) {
-    .cs_service_list_wrapper {
-      padding: 40px 20px;
-    }
-
-    .cs_service_list {
-      font-size: 16px;
-
-      a {
-        gap: 10px;
-        padding: 20px 15px;
-      }
-    }
+  .cs_sidebar_widget {
+    border: 1px solid var(--gray-color2);
   }
 
-  @media (max-width:991px) {
-    .cs_service_list_wrapper {
-      padding: 30px 20px;
+  @media (max-width: 1199px) {
+    .cs_sidebar_widget_in {
+      padding: 15px;
     }
-
-    .cs_contact_card {
-      padding: 10px;
-
-      .cs_contact_card_inner {
-        min-height: 450px;
-      }
+    .cs_post_style_4 {
+      gap: 15px;
     }
   }
 }
 
-.cs_author_card {
-  .cs_author_thumbnail {
-    width: 100px;
-    height: 100px;
-  }
-
-  .cs_author_social_links {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-
-    a {
-      font-size: 20px;
-      color: var(--accent-color);
-
-      &:hover {
-        color: var(--primary-color);
-        transform: translateY(-2px);
-      }
-    }
-  }
-}
-
-.cs_tags_links {
-  display: flex;
-  gap: 20px 15px;
-  flex-wrap: wrap;
-
-  .cs_tag_link {
-    padding: 5px 20px 4px;
-
-    &:hover {
-      color: var(--white-color);
-      background-color: var(--accent-color);
-    }
-  }
+.cs_sidebar_style_3 {
+  border: 1px solid var(--gray-color2);
+  padding: 30px;
 }

@@ -41,7 +41,7 @@
     font-size: 28px;
   }
   @media (max-width: 767px) {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .cs_fs_32 {
@@ -65,16 +65,12 @@
   font-size: 48px;
   line-height: 1.20833em;
 
-  @media (max-width: 1399px) {
-    font-size: 50px;
-  }
-
   @media (max-width: 991px) {
-    font-size: 42px;
+    font-size: 40px;
   }
 
   @media (max-width: 767px) {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   @media (max-width: 420px) {
@@ -137,13 +133,23 @@
   }
 
   @media (max-width: 767px) {
-    font-size: 56px;
+    font-size: 50px;
   }
 }
 
 .cs_fs_150 {
   font-size: 150px;
   line-height: 1em;
+
+  @media (max-width: 991px) {
+    font-size: 100px;
+  }
+  @media (max-width: 767px) {
+    font-size: 80px;
+  }
+  @media (max-width: 575px) {
+    font-size: 60px;
+  }
 }
 .cs_fs_200 {
   font-size: 200px;
@@ -410,7 +416,7 @@
     top: 0;
     z-index: 0;
     background-color: var(--blue-color);
-    transform: translate(-50%, 25%) scale(1);
+    transform: translate(-50%, 53%) scale(1);
     transition: 0.6s ease;
   }
 
@@ -423,7 +429,7 @@
 
     &::before {
       bottom: 0;
-      transform: translate(-50%, 0) scaleX(1.5) scaleY(1.5);
+      transform: translate(-50%, 0) scaleX(2) scaleY(2);
     }
   }
 
@@ -552,15 +558,40 @@
     height: 50px;
     border-radius: 50%;
     border: 1px solid var(--white-color);
-    transition: all 0.3s ease;
-
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+    background-color: var(--primary-color);
+    svg {
+      position: relative;
+      z-index: 5;
+    }
     &::after {
       content: "";
       position: absolute;
-      width: 16px;
-      height: 16px;
-      background: var(--white-color);
-      clip-path: polygon(0 0, 100% 50%, 0 100%);
+      inset: 0;
+      background: var(--primary-color);
+
+      border-radius: inherit;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      z-index: 0;
+      border-radius: inherit;
+      background: conic-gradient(
+        from var(--cs-resource-angle),
+        transparent 0deg,
+        var(--accent-color) 120deg,
+        var(--accent-color) 60deg,
+        transparent 80deg,
+        transparent 360deg
+      );
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
     }
   }
   &:hover {
@@ -568,19 +599,27 @@
 
     .cs_play_icon {
       border-color: var(--accent-color);
-      &::after {
-        background: var(--accent-color);
+      &::before {
+        opacity: 1;
+        animation: borderAnimation 2s linear infinite;
       }
     }
   }
 }
-
+@property --cs-resource-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
 .cs_player_btn_style_3 {
-  width: 160px;
-  height: 160px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   position: relative;
   transition: all 0.3s ease;
+  background-color: var(--white-color);
+  border: transparent;
+  z-index: 10;
 
   > * {
     position: relative;
@@ -590,20 +629,21 @@
   &::before,
   &::after {
     content: "";
-    width: 100%;
-    height: 100%;
+    width: 120px;
+    height: 120px;
     position: absolute;
     left: 50%;
     top: 50%;
     z-index: 0;
     transform: translate(-50%, -50%) scale(1);
     border-radius: inherit;
-    border: 6px solid currentColor;
+    border: 6px solid var(--gray-color2);
     animation: pulseBorder 3s linear infinite;
   }
 
   &::after {
     animation-delay: 1.5s;
+    background: var(--white-color);
   }
 
   &:hover {
@@ -612,6 +652,17 @@
     &::before,
     &::after {
       animation-play-state: paused;
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: 80px;
+    height: 80px;
+
+    &::before,
+    &::after {
+      width: 80px;
+      height: 80px;
     }
   }
 }
@@ -906,6 +957,12 @@
 @keyframes upDownArrow {
   50% {
     transform: rotate(-90deg) translateY(-5px);
+  }
+}
+
+@keyframes borderAnimation {
+  to {
+    --cs-resource-angle: 360deg;
   }
 }
 

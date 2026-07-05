@@ -37,6 +37,18 @@
   /*====================================================================
     Scripts initialization
   ======================================================================*/
+  $(".tom_select").each(function () {
+      new TomSelect(this, {
+        create: false,
+        onDropdownOpen: function (dropdown) {
+          dropdown.classList.add("active");
+        },
+        onDropdownClose: function (dropdown) {
+          dropdown.classList.remove("active");
+        },
+      });
+    });
+    
   $.exists = function (selector) {
     return $(selector).length > 0;
   };
@@ -1141,4 +1153,8 @@
       });
     });
   }
+
+  
+
+
 })(jQuery); // End of use strict

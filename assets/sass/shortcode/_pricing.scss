@@ -6,6 +6,7 @@
 .cs_pricing_table_style_3,
 .cs_pricing_table_style_4 {
   padding: 30px;
+  height: 100%;
 
   .cs_pricing_features_list {
     li {
@@ -86,6 +87,14 @@
     .cs_price_left,
     .cs_price_right {
       padding: 48px 18px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    flex-direction: column;
+
+    .cs_price_left {
+      padding-bottom: 0;
     }
   }
 }
