@@ -314,6 +314,13 @@
     }
   }
 
+  .cs_swiper_arrow_style_1 {
+    position: absolute;
+    right: 43px;
+    bottom: 0;
+    z-index: 5;
+  }
+
   @media (max-width: 1400px) {
     .cs_single_product_nav {
       .cs_nav_thumbnail {
@@ -379,6 +386,10 @@
         height: 100%;
       }
     }
+  }
+
+  .cs_swiper_arrow_style_1 {
+    bottom: 40px;
   }
 
   @media (max-width: 991px) {

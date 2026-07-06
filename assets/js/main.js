@@ -79,6 +79,7 @@
     progressBar();
     cardHoverActive();
     serviceHoverTabs()
+    showIcon()
     // gsapAnimation();
     // dynamicContactForm();
     if ($.exists(".cs_getting_year")) {
@@ -407,43 +408,22 @@
       768: { slidesPerView: 4, spaceBetween: 20 },
       1024: { slidesPerView: 4, spaceBetween: 20 },
     }
-    
-        // breakpoints: {
-        //   320: {
-        //     slidesPerView: 3,
-        //     spaceBetween: 10,
-        //   },
-
-        //   450: {
-        //     slidesPerView: 4,
-        //     spaceBetween: 30,
-        //   },
-        //   768: {
-        //     slidesPerView: 4,
-        //     spaceBetween: 20,
-        //   },
-
-        //   1024: {
-        //     slidesPerView: 4,
-        //     spaceBetween: 20,
-        //   },
-        // },
       });
 
       // Initialize Main slider with connection to thumbnails
       new Swiper(".cs_single_product_slider", {
-        spaceBetween: 0,
-        slidesPerView: 1,
-        effect: "slide",
-        fadeEffect: {
-          crossFade: true,
-        },
-        thumbs: {
-          swiper: propertyNav,
-        },
-        loop: false,
-        autoplay: false,
-      });
+  spaceBetween: 0,
+  slidesPerView: 1,
+  effect: "slide",
+  fadeEffect: { crossFade: true },
+  thumbs: { swiper: propertyNav },
+  navigation: {
+    nextEl: ".cs_right_arrow",
+    prevEl: ".cs_left_arrow",
+  },
+  loop: false,
+  autoplay: false,
+});
     }
   }
   /*============================================================
@@ -566,14 +546,23 @@
           </div>
         </div>
       `);
+
+      function getEmbedUrl(url) {
+        let videoId =
+          url.split("youtu.be/")[1]?.split("?")[0] ||
+          url.split("v=")[1]?.split("&")[0];
+        return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1` : url;
+      }
+
       $(document).on("click", ".cs_video_open", function (e) {
         e.preventDefault();
         var video = $(this).attr("href");
+        var embedUrl = getEmbedUrl(video);
 
-        $(".cs_video_popup_container iframe").attr("src", `${video}`);
-
+        $(".cs_video_popup_container iframe").attr("src", embedUrl);
         $(".cs_video_popup").addClass("active");
       });
+
       $(".cs_video_popup_close, .cs_video_popup-layer").on(
         "click",
         function (e) {
@@ -584,7 +573,7 @@
         },
       );
     }
-  }
+}
   /*============================================================
     10. Review
   ==============================================================*/
@@ -1154,7 +1143,29 @@
     });
   }
 
-  
+   /*===============================================================
+    20. show icon
+  =================================================================*/
+  function showIcon() {
+  $(".cs_icon_btn").on("click", function (e) {
+    e.preventDefault();
+
+    var $thisBtn = $(this);
+    var $thisThumbnail = $thisBtn.closest(".cs_team_info").siblings(".cs_team_thumbnail");
+    var $thisSocial = $thisThumbnail.find(".cs_social_btns_style_1");
+    var isActive = $thisBtn.hasClass("active");
+
+    $(".cs_icon_btn").removeClass("active");
+    $(".cs_social_btns_style_1").removeClass("active");
+    $(".cs_team_thumbnail").removeClass("active");
+
+    if (!isActive) {
+      $thisBtn.addClass("active");
+      $thisSocial.addClass("active");
+      $thisThumbnail.addClass("active");
+    }
+  });
+}
 
 
 })(jQuery); // End of use strict

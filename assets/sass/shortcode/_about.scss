@@ -77,6 +77,13 @@
     width: 100%;
     object-fit: cover;
   }
+
+  .cs_img_dots_line {
+    bottom: -200px;
+    left: 0;
+    filter: brightness(0) saturate(100%) invert(46%) sepia(0%) saturate(0%)
+      hue-rotate(347deg) brightness(88%) contrast(85%);
+  }
 }
 
 .cs_about_style_4 {

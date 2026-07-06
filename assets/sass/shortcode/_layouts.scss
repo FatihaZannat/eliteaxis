@@ -40,6 +40,11 @@
     transform: translate(-50%, -50%);
     z-index: 2;
     border: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 
@@ -60,7 +65,6 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
 
   .cs_customer_avaters {
     display: flex;
@@ -87,6 +91,10 @@
       background-color: var(--accent-color);
       margin-left: -15px;
     }
+  }
+
+  .cs_review_details {
+    width: min(350px, 100%);
   }
 }
 
@@ -137,7 +145,7 @@
           display: block;
           width: 42%;
           height: 2px;
-          background: var(--primary-color);
+          background: var(--accent-color);
           left: -44%;
           z-index: 5;
 
@@ -147,7 +155,7 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background-color: var(--primary-color);
+            background-color: var(--accent-color);
             color: white;
             position: absolute;
             display: flex;
@@ -187,9 +195,9 @@
           position: relative;
           top: 50%;
           display: block;
-          width: 43%;
+          width: 78%;
           height: 2px;
-          background: var(--primary-color);
+          background: var(--accent-color);
           right: 0%;
           z-index: 5;
 
@@ -199,7 +207,7 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background-color: var(--primary-color);
+            background-color: var(--accent-color);
             color: white;
             position: absolute;
             display: flex;
@@ -214,7 +222,7 @@
       &:nth-child(3) {
         .cs_card_title {
           .cs_line {
-            width: 47%;
+            width: 86%;
           }
         }
       }
@@ -253,13 +261,13 @@
       .cs_card_style_4 {
         .cs_card_title {
           .cs_line {
-            width: 32%;
+            width: 48%;
           }
         }
         &:nth-child(3) {
           .cs_card_title {
             .cs_line {
-              width: 35%;
+              width: 56%;
             }
           }
         }

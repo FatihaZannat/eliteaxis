@@ -355,10 +355,11 @@
   }
 }
 
-.cs_accordians_wrapper_2 {
-  .cs_img {
+.cs_accordians_wrapper_style_2,
+.cs_accordians_wrapper_style_3 {
+  .cs_img_dots_line {
     left: 0;
-    bottom: 0;
+    bottom: 35px;
     filter: brightness(0) saturate(100%) invert(46%) sepia(0%) saturate(0%)
       hue-rotate(347deg) brightness(88%) contrast(85%);
   }
@@ -369,9 +370,15 @@
     }
   }
 
-  @media (max-width: 575px) {
-    .cs_customer_review_style_3 {
-      flex-wrap: wrap;
-    }
-  }
+  // @media (max-width: 575px) {
+  //   .cs_customer_review_style_3 {
+  //     flex-wrap: wrap;
+  //   }
+  // }
+}
+
+.cs_accordians_wrapper_style_3 {
+  width: calc(100% - 20px);
+  max-width: 1880px;
+  margin: auto;
 }
