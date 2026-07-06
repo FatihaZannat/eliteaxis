@@ -48,10 +48,26 @@
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 991px) {
   .cs_circle_text {
     width: 140px;
     height: 140px;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .cs_circle_text {
+    width: 100px;
+    height: 100px;
+  }
+  svg {
+    width: 17px;
+    height: 17px;
   }
 }
 

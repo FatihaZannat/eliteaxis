@@ -190,15 +190,8 @@
     }
 
     .cs_circle_text {
-      width: 140px;
-      height: 140px;
       bottom: -75px;
       right: 30px;
-
-      svg {
-        width: 20px;
-        height: 20px;
-      }
     }
 
     .swiper-wrapper {
@@ -400,11 +393,6 @@
         .cs_circle_text {
           max-width: 100px;
           max-height: 100px;
-
-          svg {
-            width: 20px;
-            height: 20px;
-          }
         }
       }
     }
