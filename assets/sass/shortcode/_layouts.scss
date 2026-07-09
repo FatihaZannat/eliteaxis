@@ -843,9 +843,6 @@
 =========================================================*/
 
 .cs_solution_wrapper_style_1 {
-  max-width: 1900px;
-  margin: 0 auto;
-
   .cs_left_solution,
   .cs_right_solution {
     display: flex;
@@ -1150,7 +1147,9 @@ textarea.cs_form_field {
   Brand Logo
 =========================================================*/
 .cs_brand_style_1 {
-  margin: 0 60px;
+  width: calc(100% - 30px);
+  max-width: 1800px;
+  margin: 0 auto;
   border-radius: 30px;
 
   .cs_brand_text {
@@ -1164,19 +1163,23 @@ textarea.cs_form_field {
   .cs_circle_text {
     position: relative;
   }
-
-  .cs_brands {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
   .cs_brand_in {
     width: min(1240px, 100%);
     padding: 120px 20px;
     margin: 0 auto;
+  }
+
+  .cs_brand_img {
+    img {
+      opacity: 0.4;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      img {
+        opacity: 1;
+      }
+    }
   }
 
   @media (max-width: 991px) {
@@ -1203,14 +1206,6 @@ textarea.cs_form_field {
     .cs_brand_text {
       font-size: 70px;
     }
-  }
-}
-
-.cs_service_wrapper_style_1 {
-  max-width: 1860px;
-  margin: 0 auto;
-  .container-fluid {
-    padding: 0 30px;
   }
 }
 
@@ -1260,5 +1255,20 @@ textarea.cs_form_field {
       color: var(--accent-color);
       background-color: transparent;
     }
+  }
+}
+
+.cs_bg_size_1 {
+  max-width: 1900px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+}
+.cs_bg_size_2 {
+  max-width: 1860px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+
+  .container-fluid {
+    padding: 0 30px;
   }
 }

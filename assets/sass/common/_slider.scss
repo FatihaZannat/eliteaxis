@@ -292,7 +292,7 @@
 .cs_slider.cs_style_2,
 .cs_slider.cs_style_5 {
   .cs_testimonial_thumbnail {
-    width: 100%;
+    width: 100% !important;
 
     img {
       width: 100%;
@@ -305,9 +305,14 @@
     transform: none;
 
     .cs_nav_thumbnail {
-      max-width: 112px;
-      max-height: 112px !important;
+      width: 112px;
+      height: 112px !important;
       border-radius: 10px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
       &.swiper-slide-thumb-active {
         border: 1px solid var(--accent-color) !important;
       }
@@ -379,7 +384,7 @@
   .cs_single_product_nav {
     .cs_nav_thumbnail {
       width: 150px;
-      height: 135px !important;
+      height: 140px !important;
 
       img {
         width: 100%;
@@ -391,12 +396,36 @@
   .cs_swiper_arrow_style_1 {
     bottom: 40px;
   }
+  @media (max-width: 1400px) {
+    .cs_single_product_nav {
+      .cs_nav_thumbnail {
+        width: 100%;
+      }
+    }
+  }
 
   @media (max-width: 991px) {
     .cs_single_product_nav {
+      .cs_nav_thumbnail {
+        width: 150px;
+      }
+    }
+    .cs_single_product_nav {
       .swiper-wrapper {
         flex-direction: row;
+        gap: 20px;
       }
+    }
+  }
+  @media (max-width: 575px) {
+    .cs_single_product_nav {
+      .cs_nav_thumbnail {
+        width: 100px;
+        height: 100px !important;
+      }
+    }
+    .cs_swiper_arrow_style_1 {
+      display: none;
     }
   }
 }
@@ -515,8 +544,6 @@
       margin: 40px 0;
       gap: 20px;
       flex-direction: row;
-      // transform: rotate(180deg);
-      // transform: scaleX(-1);
     }
 
     .cs_sliding_content {
@@ -556,6 +583,23 @@
     }
   }
 
+  &.cs_type_10 {
+    .cs_sliding_content {
+      margin: 0 60px;
+      justify-content: space-between;
+      min-width: 100%;
+    }
+
+    .cs_brand_img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
   @media (max-width: 991px) {
     &.cs_type_1 {
       padding: 70px 40px;
@@ -568,6 +612,15 @@
     &.cs_type_4 {
       bottom: 100px;
       padding: 0 0 20px 0;
+    }
+
+    &.cs_type_10 {
+      .cs_slider_inner {
+        gap: 60px;
+      }
+      .cs_sliding_content {
+        gap: 60px;
+      }
     }
   }
 

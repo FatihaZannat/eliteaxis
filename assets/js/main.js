@@ -1146,15 +1146,16 @@
    /*===============================================================
     20. show icon
   =================================================================*/
-  function showIcon() {
+function showIcon() {
   $(".cs_icon_btn").on("click", function (e) {
     e.preventDefault();
 
     var $thisBtn = $(this);
-    var $thisThumbnail = $thisBtn.closest(".cs_team_info").siblings(".cs_team_thumbnail");
-    var $thisSocial = $thisThumbnail.find(".cs_social_btns_style_1");
-    var isActive = $thisBtn.hasClass("active");
+    var $thisCard = $thisBtn.closest("[class*='cs_team_style_']");
+    var $thisThumbnail = $thisCard.find(".cs_team_thumbnail");
+    var $thisSocial = $thisCard.find(".cs_social_btns_style_1");
 
+    var isActive = $thisBtn.hasClass("active");
     $(".cs_icon_btn").removeClass("active");
     $(".cs_social_btns_style_1").removeClass("active");
     $(".cs_team_thumbnail").removeClass("active");

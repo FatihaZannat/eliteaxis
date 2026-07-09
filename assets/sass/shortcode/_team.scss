@@ -180,14 +180,6 @@
       border-radius: 0;
     }
   }
-
-  // &:hover {
-  //   .cs_team_thumbnail {
-  //     &::after {
-  //       opacity: 1;
-  //     }
-  //   }
-  // }
 }
 
 .cs_team_style_3 {
@@ -505,20 +497,6 @@
     align-items: center;
   }
 
-  .cs_icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: var(--primary-color);
-    transition: all 0.3s ease;
-
-    img {
-      border-radius: 0;
-      filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
-        hue-rotate(93deg) brightness(103%) contrast(103%);
-    }
-  }
-
   .cs_team_info,
   h3 {
     transition: all 0.3s ease;
@@ -536,20 +514,6 @@
     }
   }
 
-  .cs_social_btns_style_1 {
-    flex-direction: column;
-
-    a {
-      border-color: var(--white-color);
-      color: var(--white-color);
-      transform: rotate(-45deg);
-
-      &:hover {
-        border-color: var(--accent-color);
-      }
-    }
-  }
-
   &:hover {
     .cs_team_thumbnail {
       width: 200px;
@@ -561,11 +525,6 @@
     }
     .cs_icon {
       background-color: var(--accent-color);
-    }
-    .cs_social_btns_style_1 {
-      a {
-        transform: rotate(0);
-      }
     }
   }
 
@@ -604,10 +563,55 @@
 
 .cs_team_style_9 {
   border: 1px solid var(--gray-color2);
+  background-color: transparent;
   padding: 30px;
   height: 450px;
+
+  .cs_team_info {
+    flex: none;
+  }
+
+  .cs_icon_btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+
+    img {
+      border-radius: 0;
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+        hue-rotate(93deg) brightness(103%) contrast(103%);
+    }
+  }
+
+  .cs_social_btns_style_1 {
+    flex-direction: column;
+
+    a {
+      color: var(--white-color);
+      border-color: var(--white-color);
+      transform: scale(0) rotate(45deg);
+      opacity: 0;
+      transition: all 0.4s ease;
+
+      &:hover {
+        background-color: var(--accent-color);
+      }
+    }
+
+    &.active {
+      a {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+  }
   &:hover {
     background-color: var(--primary-color);
+    .cs_icon_btn {
+      background-color: var(--accent-color);
+    }
   }
 }
 
@@ -662,6 +666,10 @@
           .cs_social_btns_style_1 {
             opacity: 1;
             bottom: 30px;
+
+            a {
+              transform: rotate(0);
+            }
           }
 
           &::after {
@@ -670,14 +678,25 @@
         }
       }
     }
+  }
 
-    .cs_social_btns_style_1 {
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
+  .cs_social_btns_style_1 {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 5;
+
+    a {
+      border-color: var(--white-color);
+      color: var(--white-color);
+      transform: rotate(-45deg);
       transition: all 0.3s ease;
-      z-index: 5;
+
+      &:hover {
+        background-color: var(--white-color);
+        color: var(--accent-color);
+      }
     }
   }
 
@@ -689,7 +708,6 @@
     filter: blur(150px);
     width: 230px;
     height: 230px;
-    aspect-ratio: 1/1;
   }
 
   .cs_bg_effect_1 {
@@ -722,25 +740,18 @@
 }
 
 .cs_team_wrapper_style_2 {
-  width: calc(100% - 20px);
-  max-width: 1900px;
-  margin: 0 auto;
-
-  .cs_team_wrapper_in {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    border-top: 1px solid #dedede;
-    border-bottom: 1px solid #dedede;
-    padding: 0 12px;
-  }
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  padding: 0 12px;
 
   @media (max-width: 991px) {
-    .cs_team_wrapper_in {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      border-top: 0;
-      border-bottom: 0;
-    }
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-top: 0;
+    border-bottom: 0;
+
     .cs_team_style_8 {
       border: 1px solid #dedede;
       padding: 20px 14px;
@@ -748,13 +759,10 @@
   }
 
   @media (max-width: 767px) {
-    .cs_team_wrapper_in {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(2, 1fr);
+
     @media (max-width: 575px) {
-      .cs_team_wrapper_in {
-        grid-template-columns: repeat(1, 1fr);
-      }
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }

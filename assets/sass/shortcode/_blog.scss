@@ -304,6 +304,13 @@
       opacity: 1;
     }
   }
+  .cs_blog_title {
+    a {
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
 
   @media (max-width: 991px) {
     .cs_blog_details {
@@ -473,4 +480,12 @@
 .cs_blog_wrapper_style_3 {
   max-width: 1900px;
   margin: 0 auto;
+}
+
+.cs_blog_wrapper_style_4 {
+  padding-left: 225px;
+
+  @media (max-width: 1199px) {
+    padding-left: 0;
+  }
 }

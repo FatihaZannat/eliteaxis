@@ -6,7 +6,8 @@
 .cs_accordian.cs_style_3,
 .cs_accordian.cs_style_4,
 .cs_accordian.cs_style_5,
-.cs_accordian.cs_style_6 {
+.cs_accordian.cs_style_6,
+.cs_accordian.cs_style_7 {
   .cs_accordian_toggler {
     display: inline-block;
     width: 20px;
@@ -40,10 +41,6 @@
     padding: 0 60px 20px 20px;
     margin-top: -10px;
   }
-  // .cs_service_title::before {
-  //   content: counter(accordion-counter, decimal-leading-zero) ". ";
-  //   font-weight: bold;
-  // }
 
   &.active {
     .cs_accordian_head {
@@ -58,10 +55,6 @@
   }
 
   @media (max-width: 991px) {
-    // .cs_accordian_head {
-    //   // padding: 30px 40px 30px 15px;
-    // }
-
     .cs_accordian_toggler {
       right: 15px;
     }
@@ -277,7 +270,8 @@
   }
 }
 
-.cs_accordian.cs_style_5 {
+.cs_accordian.cs_style_5,
+.cs_accordian.cs_style_7 {
   &.active {
     background-color: var(--primary-color);
     .cs_accordian_title,
@@ -338,6 +332,12 @@
     }
   }
 }
+
+.cs_accordian.cs_style_7 {
+  &.active {
+    background-color: var(--accent-color);
+  }
+}
 /*===================================================
  Accordians Wrappers
 =====================================================*/
@@ -348,7 +348,8 @@
   .cs_accordian.cs_style_2,
   .cs_accordian.cs_style_3,
   .cs_accordian.cs_style_5,
-  .cs_accordian.cs_style_6 {
+  .cs_accordian.cs_style_6,
+  .cs_accordian.cs_style_7 {
     &:not(:last-child) {
       margin-bottom: 20px;
     }
@@ -369,12 +370,6 @@
       display: none;
     }
   }
-
-  // @media (max-width: 575px) {
-  //   .cs_customer_review_style_3 {
-  //     flex-wrap: wrap;
-  //   }
-  // }
 }
 
 .cs_accordians_wrapper_style_3 {

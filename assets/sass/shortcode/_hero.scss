@@ -701,6 +701,7 @@
     align-items: end;
     gap: 10px;
     top: 41%;
+    left: 3%;
   }
 
   .cs_img {
@@ -785,8 +786,7 @@
 }
 
 .cs_hero_style_9 {
-  max-width: 1860px;
-  margin: 136px auto 0;
+  margin: 136px auto 0 !important;
 
   .container-fluid {
     padding: 0 30px;
@@ -854,10 +854,6 @@
 }
 
 .cs_hero_style_10 {
-  max-width: 1900px;
-  margin: 0 auto;
-  width: calc(100% - 20px);
-
   .container-fluid {
     padding: 0 120px;
   }

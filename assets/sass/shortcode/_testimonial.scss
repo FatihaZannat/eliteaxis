@@ -248,6 +248,9 @@
     color: var(--light-blue-color);
   }
 
+  @media (max-width: 1400px) {
+    padding: 20px 30px;
+  }
   @media (max-width: 575px) {
     padding: 20px;
   }
@@ -287,7 +290,9 @@
 }
 
 .cs_testimonial_wrapper_style_3 {
-  // margin: 0 60px;
+  width: calc(100% - 30px);
+  max-width: 1800px;
+  margin: 0 auto;
 
   .cs_testimonial_thumbnail {
     height: 100%;
