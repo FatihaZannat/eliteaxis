@@ -151,6 +151,10 @@
   .cs_card_btn {
     background-color: transparent;
     border: 1px solid var(--accent-color);
+
+    &:hover {
+      background-color: var(--accent-color);
+    }
   }
 
   @media (max-width: 1600px) {

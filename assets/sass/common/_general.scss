@@ -526,6 +526,12 @@
   &:hover {
     color: var(--accent-color);
   }
+
+  &.cs_accent_color {
+    &:hover {
+      color: var(--white-color);
+    }
+  }
 }
 
 .cs_text_btn_style_2 {
