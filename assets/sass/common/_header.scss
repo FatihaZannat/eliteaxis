@@ -304,6 +304,9 @@
     .cs_menu_toggle {
       display: inline-block;
     }
+    .cs_dropdown_list {
+      color: var(--white-color);
+    }
 
     .cs_menu_dropdown_toggle {
       position: absolute;
@@ -366,6 +369,19 @@
         border-radius: 0;
       }
     }
+    &.cs_style_2 {
+      .cs_main_header_in {
+        background-color: var(--white-color);
+      }
+      .cs_nav {
+        .cs_nav_list {
+          background-color: var(--white-color);
+        }
+        .cs_dropdown_list {
+          color: var(--primary-color);
+        }
+      }
+    }
 
     &.cs_style_4 {
       .container-fluid {
@@ -379,6 +395,9 @@
       .cs_nav {
         .cs_nav_list {
           background-color: var(--white-color);
+        }
+        .cs_dropdown_list {
+          color: var(--primary-color);
         }
       }
 
@@ -398,6 +417,7 @@
       .cs_main_header_in {
         padding: 0;
         border-radius: 0;
+        width: 100%;
       }
 
       .cs_main_header_center {

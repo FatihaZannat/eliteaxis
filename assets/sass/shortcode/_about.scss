@@ -334,6 +334,18 @@
     .cs_about_list {
       padding: 20px 20px 20px 140px;
     }
+    .cs_down_btn_style_2 {
+      bottom: 100px;
+    }
+  }
+  @media (max-width: 575px) {
+    .cs_about_list {
+      clip-path: none;
+      padding-left: 80px;
+    }
+    .cs_down_btn_style_2 {
+      left: -20px;
+    }
   }
 }
 

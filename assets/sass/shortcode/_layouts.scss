@@ -728,6 +728,10 @@
       height: 100px;
     }
   }
+
+  @media (max-width: 767px) {
+    padding: 20px;
+  }
 }
 
 .cs_portfolio_style_3 {
@@ -1270,5 +1274,12 @@ textarea.cs_form_field {
 
   .container-fluid {
     padding: 0 30px;
+  }
+
+  @media (max-width: 767px) {
+    .container-fluid {
+      padding: 0 10px;
+    }
+    width: calc(100% - 10px);
   }
 }
