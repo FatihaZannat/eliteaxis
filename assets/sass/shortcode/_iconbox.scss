@@ -473,7 +473,7 @@
     }
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1399px) {
     padding: 20px;
   }
   @media (max-width: 667px) {
@@ -686,7 +686,7 @@
     grid-column-end: span 2;
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1399px) {
     grid-template-columns: repeat(3, 1fr);
   }
   @media (max-width: 991px) {
@@ -723,7 +723,7 @@
     }
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1399px) {
     .cs_middle_img {
       max-width: 340px;
     }

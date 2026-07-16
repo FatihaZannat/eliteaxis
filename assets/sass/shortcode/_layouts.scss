@@ -41,33 +41,31 @@
     z-index: 2;
     border: 1px solid var(--primary-color);
     transition: all 0.3s ease;
-
+  }
+  a {
     &:hover {
       opacity: 0.7;
     }
   }
-}
 
-@media (max-width: 991px) {
-  .cs_circle_text {
+  @media (max-width: 991px) {
     width: 140px;
     height: 140px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-@media (max-width: 575px) {
-  .cs_circle_text {
+  @media (max-width: 575px) {
     width: 100px;
     height: 100px;
-  }
-  svg {
-    width: 17px;
-    height: 17px;
+
+    svg {
+      width: 17px;
+      height: 17px;
+    }
   }
 }
 
@@ -120,6 +118,7 @@
   padding: 24px 30px;
   border-radius: 10px;
   width: fit-content;
+  max-width: 350px;
   gap: 10px;
 
   .cs_customer_avaters {
@@ -253,7 +252,7 @@
     transform: translate(-50%, -50%);
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1399px) {
     .cs_work_process_right {
       .cs_card_style_4 {
         .cs_card_title {
@@ -1283,3 +1282,4 @@ textarea.cs_form_field {
     width: calc(100% - 10px);
   }
 }
+// TEst Run
