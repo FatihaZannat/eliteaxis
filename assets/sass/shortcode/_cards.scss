@@ -75,6 +75,11 @@
   }
   .cs_card_title {
     width: 242px;
+    a {
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
   }
 
   .cs_card_overlay {
@@ -196,6 +201,9 @@
     font-family: var(--primary-font);
     font-weight: 600;
   }
+  .cs_card_title a:hover {
+    color: var(--accent-color);
+  }
 
   .cs_btn_style_1 {
     background-color: transparent;
@@ -264,6 +272,10 @@
     }
   }
 
+  .cs_card_title a:hover {
+    color: var(--accent-color);
+  }
+
   &:not(:last-child) {
     margin-bottom: 20px;
   }
@@ -293,6 +305,9 @@
       width: 100%;
       object-fit: cover;
     }
+  }
+  .cs_card_title a:hover {
+    color: var(--accent-color);
   }
 
   .cs_card_info {
@@ -359,6 +374,10 @@
   &:hover {
     background-color: var(--accent-color);
   }
+
+  &.active {
+    background-color: var(--accent-color);
+  }
 }
 
 .cs_card_style_10 {
@@ -392,6 +411,10 @@
     opacity: 0;
     padding: 30px;
     transition: all 01s ease;
+  }
+
+  .cs_card_title a:hover {
+    color: var(--accent-color);
   }
 
   &:hover {
@@ -500,6 +523,10 @@
     z-index: 2;
   }
 
+  .cs_card_title a:hover {
+    color: var(--accent-color);
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -538,6 +565,7 @@
 
       .cs_card_title {
         a {
+          display: inline-block;
           color: var(--white-color);
           &:hover {
             transform: scale(1.02);
@@ -670,6 +698,10 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+
+    a:hover {
+      color: var(--accent-color);
+    }
   }
 
   @media (max-width: 1199) {
@@ -742,13 +774,14 @@
   counter-reset: accordion-counter;
 }
 
-.cs_card_wrapper_style_2 {
+.cs_card_wrapper_style_2,
+.cs_card_wrapper_style_5 {
   counter-reset: accordion-counter;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px 24px;
 
-  @media (max-width: 1199px) {
+  @media (max-width: 767px) {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -765,6 +798,7 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
 .cs_card_wrapper_style_4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -779,6 +813,12 @@
   }
 
   @media (max-width: 575px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.cs_card_wrapper_style_5 {
+  @media (max-width: 1199px) {
     grid-template-columns: repeat(1, 1fr);
   }
 }

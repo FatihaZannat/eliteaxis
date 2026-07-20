@@ -13,7 +13,6 @@
     width: 60px;
     height: 60px;
     transition: all 0.3s ease;
-    border: 1px solid;
 
     img {
       border-radius: 0;
@@ -62,6 +61,7 @@
     align-items: center;
     justify-content: end;
   }
+
   .cs_icon_title {
     flex-shrink: 0;
     counter-increment: accordion-counter;
@@ -133,6 +133,7 @@
         }
       }
     }
+
     .cs_iconbox_icon {
       background-color: var(--accent-color);
       img {
@@ -148,14 +149,14 @@
       gap: 20px 20px;
       justify-content: space-between;
     }
-  }
 
-  .cs_icon_img {
-    top: -15px;
-    left: 200px;
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
+    .cs_icon_img {
+      top: -15px;
+      left: 200px;
+      height: 200px;
+      width: 200px;
+      border-radius: 100px;
+    }
   }
 
   @media (max-width: 575px) {
@@ -181,14 +182,6 @@
         hue-rotate(131deg) brightness(93%) contrast(94%);
     }
   }
-
-  // .cs_number {
-  //   counter-increment: accordion-counter;
-  //   position: relative;
-  //   &:before {
-  //     content: counter(accordion-counter, decimal-leading-zero);
-  //   }
-  // }
 
   &:hover {
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
@@ -283,6 +276,9 @@
     }
   }
 
+  .cs_iconbox_title a:hover {
+    color: var(--accent-color);
+  }
   &:hover {
     .cs_iconbox_icon {
       border: 1px solid var(--white-color);
@@ -368,6 +364,9 @@
     height: 70px;
   }
 
+  .cs_iconbox_title a:hover {
+    opacity: 0.7;
+  }
   .cs_number {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--accent-color);

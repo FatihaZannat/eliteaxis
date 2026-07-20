@@ -481,28 +481,6 @@
   /*============================================================
     08. Counter Animation
   ==============================================================*/
-  // function counterInit() {
-  //   if (!$.exists(".odometer")) return;
-
-  //   const observer = new IntersectionObserver(
-  //     function (entries, observer) {
-  //       entries.forEach(function (entry) {
-  //         if (entry.isIntersecting) {
-  //           const el = $(entry.target);
-  //           el.html(el.data("count-to"));
-  //           observer.unobserve(entry.target);
-  //         }
-  //       });
-  //     },
-  //     {
-  //       threshold: 0.3,
-  //     },
-  //   );
-
-  //   $(".odometer").each(function () {
-  //     observer.observe(this);
-  //   });
-  // }
   function counterInit() {
     if (!$.exists(".odometer")) return;
 
@@ -635,24 +613,24 @@
   /*===========================================================
     14. Service Steps Animation
   =============================================================*/
+  
   function serviceSteps() {
     let tabInterval;
     let currentIndex = 0;
 
-    const $tabs = $(".cs_service_menu_list li");
-    const $tabContents = $(".cs_service_thumbnails_wrapper");
+    const $tabs = $(".cs_card_wrapper_style_1");
+    const $tabContents = $(".cs_card_style_9");
     const intervalTime = 5000;
 
     if ($tabs.length > 0 && $tabContents.length > 0) {
       function activateTab(index) {
-        $tabs.eq(index).addClass("active").siblings().removeClass("active");
-        $tabContents.eq(index).fadeIn(600).siblings().hide();
+        $tabContents.eq(index).addClass("active").siblings().removeClass("active");
       }
 
       function startAutoplay() {
         stopAutoplay();
         tabInterval = setInterval(function () {
-          currentIndex = (currentIndex + 1) % $tabs.length;
+          currentIndex = (currentIndex + 1) % $tabContents.length;
           activateTab(currentIndex);
         }, intervalTime);
       }
@@ -670,7 +648,6 @@
       });
 
       // Init
-      $tabContents.hide();
       activateTab(currentIndex);
       startAutoplay();
     }

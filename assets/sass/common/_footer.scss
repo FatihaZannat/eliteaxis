@@ -60,6 +60,10 @@
       align-items: center;
       gap: 8px;
       color: var(--secondary-color);
+
+      a:hover {
+        color: var(--accent-color);
+      }
     }
   }
 

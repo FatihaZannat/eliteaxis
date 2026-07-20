@@ -73,6 +73,10 @@
       padding: 0 20px;
     }
 
+    .cs_main_header_in {
+      height: 90px;
+    }
+
     &.cs_sticky_active {
       background-color: var(--white-color);
     }
@@ -741,6 +745,10 @@
       }
       &:not(:last-child) {
         margin-bottom: 20px;
+      }
+
+      a:hover {
+        color: var(--accent-color);
       }
     }
   }
