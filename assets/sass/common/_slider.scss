@@ -219,7 +219,8 @@
 .cs_slider.cs_style_1,
 .cs_slider.cs_style_2,
 .cs_slider.cs_style_3,
-.cs_slider.cs_style_5 {
+.cs_slider.cs_style_5,
+.cs_slider.cs_style_6 {
   .cs_testimonial_thumbnail {
     width: 100%;
 
@@ -466,6 +467,16 @@
         height: 100px !important;
       }
     }
+  }
+}
+
+.cs_slider.cs_style_6 {
+  .swiper-wrapper {
+    transition-timing-function: linear !important;
+  }
+  .cs_slider_container[data-direction="vertical"] {
+    height: 600px;
+    overflow: hidden;
   }
 }
 /*=======================================================

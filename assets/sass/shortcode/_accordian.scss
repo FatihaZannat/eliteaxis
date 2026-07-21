@@ -200,6 +200,7 @@
 
   .cs_accordian_toggler {
     top: 10px;
+    z-index: 3;
   }
 
   .cs_accordian_body {
@@ -211,15 +212,25 @@
   }
 
   .cs_iconbox_thumbnail {
-    right: 27%;
-    bottom: 0px;
     opacity: 0;
-    transition: all 0.3s ease;
+    top: -100px;
+    left: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      all 0.25s,
+      transform 0.7s cubic-bezier(0.22, 1, 0.3, 1);
+    pointer-events: none;
   }
-  &.active {
+
+  &:last-child {
     .cs_iconbox_thumbnail {
-      opacity: 1;
+      top: -250px;
     }
+  }
+
+  &.active {
     .cs_accordian_title {
       color: var(--primary-color);
 
@@ -235,15 +246,29 @@
         color: var(--white-color);
       }
     }
+    &:hover {
+      .cs_iconbox_thumbnail {
+        opacity: 1;
+      }
+    }
   }
 
+  @media (max-width: 991px) {
+    .cs_iconbox_thumbnail {
+      width: 200px;
+    }
+    &:last-child {
+      .cs_iconbox_thumbnail {
+        top: -150px;
+      }
+    }
+  }
   @media (max-width: 767px) {
     .cs_accordian_body {
       padding: 20px;
     }
-
     .cs_iconbox_thumbnail {
-      width: 200px;
+      top: -100px;
     }
   }
   @media (max-width: 575px) {

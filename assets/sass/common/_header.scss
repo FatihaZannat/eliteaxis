@@ -103,6 +103,17 @@
     }
   }
 
+  &.cs_style_6 {
+    .cs_main_header_left {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      height: 100%;
+      padding: 0 24px;
+      transition: all 0.3s ease;
+    }
+  }
+
   &.cs_sticky_active {
     background-color: var(--blue-color);
     box-shadow: 0px 1px 2px 0px rgba(2, 0, 181, 0.1);
@@ -445,6 +456,14 @@
         margin-top: 0;
       }
     }
+    &.cs_style_6 {
+      .cs_main_header_right {
+        display: none;
+      }
+      .cs_main_header_left {
+        padding: 0;
+      }
+    }
 
     .cs_close_nav {
       cursor: pointer;
@@ -489,6 +508,16 @@
         }
         &::after {
           margin-top: 7px;
+        }
+      }
+    }
+
+    &.cs_style_6 {
+      .cs_main_header_left {
+        width: 100%;
+
+        a {
+          width: 120px;
         }
       }
     }

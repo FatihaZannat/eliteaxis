@@ -259,7 +259,7 @@
       background-color: var(--accent-color);
     }
     &:hover {
-      border: 2px solid var(--white-color);
+      border: 1px solid var(--white-color);
     }
   }
   .cs_hero_content {
@@ -352,7 +352,7 @@
 .cs_hero_style_4 {
   .cs_hero_content {
     padding: 296px 0 250px 40px;
-    width: min(700px, 100%);
+    width: min(740px, 100%);
     position: relative;
     z-index: 2;
   }
@@ -397,7 +397,7 @@
   }
   @media (max-width: 1199px) {
     .cs_hero_content {
-      padding: 160px 0 160px 30px;
+      padding: 160px 0 160px 25px;
     }
   }
   @media (max-width: 767px) {

@@ -643,6 +643,7 @@
   .cs_team_right {
     display: flex;
     gap: 20px 30px;
+    max-height: 640px;
 
     .cs_team_img_left,
     .cs_team_img_right {

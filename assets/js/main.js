@@ -66,22 +66,17 @@
     stickyHeader();
     dynamicBackground();
     swiperInit();
-    modalToggle();
-    smoothScroll();
     counterInit();
     modalVideo();
-    review();
     tabs();
     accordian();
     serviceSteps();
     scrollUp();
-    animationOnHover();
     progressBar();
     cardHoverActive();
     serviceHoverTabs()
     showIcon()
-    // gsapAnimation();
-    // dynamicContactForm();
+    awardHover()
     if ($.exists(".cs_getting_year")) {
       const date = new Date();
       $(".cs_getting_year").text(date.getFullYear());
@@ -270,11 +265,18 @@
       // Read data attributes
       let autoPlayVar =
         parseInt(container.getAttribute("data-autoplay"), 10) || 0;
-      let autoplaySpdVar = 6000; // default
+      let autoplaySpdVar = 3000; // default
       if (autoPlayVar > 1) {
         autoplaySpdVar = autoPlayVar;
         autoPlayVar = 1;
       }
+      const reverseVar =
+        parseInt(container.getAttribute("data-reverse"), 10) === 1;
+
+       const directionVar =
+        container.getAttribute("data-direction") === "vertical"
+          ? "vertical"
+          : "horizontal";
 
       const speedVar =
         parseInt(container.getAttribute("data-speed"), 10) || 600;
@@ -342,6 +344,7 @@
 
       // Initialize Swiper
       const swiper = new Swiper(container, {
+        direction: directionVar,
         loop: loopVar,
         speed: speedVar,
         slidesPerView: variableWidthVar ? "auto" : slidesPerView,  
@@ -351,7 +354,8 @@
         centeredSlides: centerVar,
         effect: fadeVar ? "fade" : "slide",
         autoplay: autoPlayVar
-          ? { delay: autoplaySpdVar, disableOnInteraction: false }
+          ? { delay: autoplaySpdVar, disableOnInteraction: false,
+          reverseDirection: reverseVar, }
           : false,
         navigation: {
           nextEl: nextEl,
@@ -427,59 +431,7 @@
     }
   }
   /*============================================================
-    06. Search Modal Toggle
-  ==============================================================*/
-  function modalToggle() {
-    $(".cs_open_modal").on("click", function () {
-      $(".cs_advanced_search_modal").addClass("active");
-      $("body").addClass("scroll_off");
-    });
-    $(".cs_close_modal").on("click", function () {
-      $(".cs_advanced_search_modal").removeClass("active");
-      $("body").removeClass("scroll_off");
-    });
-  }
-  /*============================================================
-    07. Smooth Page Scroll
-  ==============================================================*/
-  function smoothScroll() {
-    if (typeof Lenis === "undefined") return;
-
-    // Reduced motion respect
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    // Prevent multiple init
-    if (window.lenisInstance) return;
-
-    const lenis = new Lenis({
-      duration: 1.2,
-      smooth: true,
-      smoothTouch: false,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-    });
-
-    window.lenisInstance = lenis;
-
-    // GSAP + ScrollTrigger integration
-
-    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-      lenis.on("scroll", ScrollTrigger.update);
-
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
-
-      gsap.ticker.lagSmoothing(0);
-    } else {
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-    }
-  }
-  /*============================================================
-    08. Counter Animation
+    06. Counter Animation
   ==============================================================*/
   function counterInit() {
     if (!$.exists(".odometer")) return;
@@ -504,7 +456,7 @@
     });
   }
   /*============================================================
-    09. Modal Video
+    07. Modal Video
   ==============================================================*/
   function modalVideo() {
     if ($.exists(".cs_video_open")) {
@@ -553,17 +505,7 @@
     }
 }
   /*============================================================
-    10. Review
-  ==============================================================*/
-  function review() {
-    $(".cs_rating").each(function () {
-      var review = $(this).data("rating");
-      var reviewVal = review * 20 + "%";
-      $(this).find(".cs_rating_percentage").css("width", reviewVal);
-    });
-  }
-  /*============================================================
-    11. Tabs
+    8. Tabs
   ===============================================================*/
   function tabs() {
     $(".cs_tab_links a").on("click", function (e) {
@@ -578,7 +520,7 @@
     });
   }
   /*--------------------------------------------------------------
-    12. Progress Bar
+    9. Progress Bar
   --------------------------------------------------------------*/
   function progressBar() {
     $(".cs_progress").each(function () {
@@ -587,7 +529,7 @@
     });
   }
   /*=============================================================
-    13. Accordian
+    10. Accordian
   ===============================================================*/
   function accordian() {
     $(".cs_accordian").children(".cs_accordian_body").hide();
@@ -611,7 +553,7 @@
     });
   }
   /*===========================================================
-    14. Service Steps Animation
+    11. Service Steps Animation
   =============================================================*/
   
   function serviceSteps() {
@@ -653,7 +595,7 @@
     }
   }
   /*==============================================================
-   15. Card Hover
+   12. Card Hover
   ================================================================*/
   function cardHoverActive() {
     $(".cs_card_style_6").on("mouseenter", function () {
@@ -664,7 +606,7 @@
     });
   }
   /*==============================================================
-    16. Scroll Up
+    12. Scroll Up
   ================================================================*/
   function scrollUp() {
     $(".cs_scrollup_btn").on("click", function (e) {
@@ -686,420 +628,9 @@
       $(".cs_scrollup_btn").removeClass("show");
     }
   }
-  /*==============================================================
-    17. Hobble Animation With Mouse Move
-  ================================================================*/
-  function animationOnHover() {
-    let cards = document.querySelectorAll(".animationonhover");
-
-    cards.forEach((tmpOnHover) => {
-      // Set initial value
-      tmpOnHover.style.setProperty("--x", "-1px");
-      tmpOnHover.style.setProperty("--y", "-1px");
-
-      tmpOnHover.onmousemove = function (e) {
-        let rect = tmpOnHover.getBoundingClientRect();
-        let x = e.clientX - rect.left;
-        let y = e.clientY - rect.top;
-
-        tmpOnHover.style.setProperty("--x", `${x}px`);
-        tmpOnHover.style.setProperty("--y", `${y}px`);
-      };
-    });
-  }
-  /*==============================================================
-    18. Animation With GSAP
-  ================================================================*/
-  function gsapAnimation() {
-    //Check if GSAP is loaded FIRST
-    if (typeof gsap === "undefined") {
-      console.warn("GSAP not loaded - animations disabled");
-      return;
-    }
-
-    //Safely register plugins
-    try {
-      if (typeof ScrollTrigger !== "undefined") {
-        gsap.registerPlugin(ScrollTrigger);
-      } else {
-        console.warn("ScrollTrigger not loaded");
-      }
-
-      if (typeof SplitText !== "undefined") {
-        gsap.registerPlugin(SplitText);
-      } else {
-        console.warn(
-          "SplitText not loaded - title animations will use fallback",
-        );
-      }
-    } catch (e) {
-      console.warn("Plugin registration failed:", e);
-    }
-
-    //Team Card Social Buttons Animation (Fixed)
-    const $teamCards = $(".cs_team_style_1");
-    if ($teamCards.length) {
-      $teamCards.each(function () {
-        const $card = $(this);
-        const $buttons = $card.find(".cs_social_btns_style_1 a");
-
-        if ($buttons.length === 0) return;
-
-        // Prevent duplicate initialization
-        if ($card.data("socialAnimated")) return;
-
-        // Set initial state
-        gsap.set($buttons, {
-          y: 15,
-          autoAlpha: 0,
-          scale: 0.8,
-        });
-
-        // Create timeline with better easing
-        const tl = gsap.timeline({
-          paused: true,
-          defaults: {
-            duration: 0.25,
-            ease: "back.out(0.6)",
-          },
-        });
-
-        tl.to($buttons, {
-          y: 0,
-          autoAlpha: 1,
-          scale: 1,
-          stagger: 0.08,
-        });
-
-        // Store timeline and mark as initialized
-        $card.data("socialTimeline", tl);
-        $card.data("socialAnimated", true);
-
-        // Event handlers
-        $card.on("mouseenter.socialAnimation", function () {
-          tl.play();
-        });
-
-        $card.on("mouseleave.socialAnimation", function () {
-          tl.reverse();
-        });
-      });
-    }
-
-    //Slide Up Text Animation
-    const $shadowText = $(".cs_shadow_text");
-    if ($shadowText.length && typeof ScrollTrigger !== "undefined") {
-      gsap.from($shadowText, {
-        y: 100,
-        opacity: 0,
-        rotationX: 15,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: $shadowText,
-          start: "top 85%",
-          end: "bottom 65%",
-          toggleActions: "play none reverse none",
-          scrub: 0.3,
-        },
-      });
-    } else if ($shadowText.length) {
-      //Fallback without ScrollTrigger
-      gsap.from($shadowText, {
-        y: 100,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        delay: 0.2,
-      });
-    }
-
-    //Button Animation
-    const $buttons = $(".cs_text_btn_style_2");
-    if ($buttons.length) {
-      $buttons.each(function () {
-        const $btn = $(this);
-        const $textEl = $btn.find(".cs_btn_text");
-
-        if (!$textEl.length) return;
-
-        const text = $textEl.text().trim();
-
-        // Prevent duplicate init
-        if ($textEl.find(".cs_letter").length || $btn.data("buttonAnimated"))
-          return;
-
-        $textEl.empty();
-
-        //Split letters with proper styling
-        const letters = text.split("");
-        letters.forEach((char, index) => {
-          const $span = $("<span/>", {
-            class: "cs_letter",
-            html: char === " " ? "&nbsp;" : char,
-            css: {
-              display: "inline-block",
-              transformStyle: "preserve-3d",
-              transformOrigin: "center center",
-            },
-          });
-          $textEl.append($span);
-        });
-
-        const $letters = $textEl.find(".cs_letter");
-
-        const tl = gsap.timeline({
-          paused: true,
-          defaults: {
-            duration: 0.6,
-            ease: "back.out(0.8)",
-          },
-        });
-
-        tl.to($letters, {
-          rotationX: 360,
-          rotationY: 10,
-          scale: 1.05,
-          stagger: 0.04,
-          ease: "power2.out",
-        });
-
-        $btn.data("buttonTimeline", tl);
-        $btn.data("buttonAnimated", true);
-
-        $btn.on("mouseenter.buttonAnimation", function () {
-          tl.play();
-        });
-
-        $btn.on("mouseleave.buttonAnimation", function () {
-          tl.reverse();
-        });
-      });
-    }
-
-    //Sticky Cards Animation
-    const $stickyCards = $(".cs_sticky_card");
-    if ($stickyCards.length && typeof ScrollTrigger !== "undefined") {
-      // Kill existing triggers to prevent conflicts
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (
-          trigger.vars.trigger &&
-          $(trigger.vars.trigger).hasClass("cs_sticky_card")
-        ) {
-          trigger.kill();
-        }
-      });
-
-      $stickyCards.each(function (index) {
-        const $card = $(this);
-        const isLast = index === $stickyCards.length - 1;
-        const topOffset = 100 + index * 40;
-
-        $card.css({
-          "z-index": 100 + index,
-          position: "relative",
-        });
-
-        ScrollTrigger.create({
-          trigger: $card[0],
-          start: "top top",
-          pin: !isLast,
-          pinSpacing: false,
-          pinOffset: topOffset,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        });
-      });
-    }
-
-    //Section Title Animation
-    const $sectionTitles = $(".cs_section_title");
-
-    if ($sectionTitles.length) {
-      //Check if SplitText is available
-      const hasSplitText = typeof SplitText !== "undefined";
-
-      $sectionTitles.each(function (index) {
-        const el = this;
-        const $el = $(el);
-
-        //Prevent duplicate initialization
-        if ($el.data("titleAnimated")) return;
-
-        if (hasSplitText) {
-          try {
-            //Split into words
-            const split = new SplitText(el, {
-              type: "words",
-              wordsClass: "word",
-            });
-
-            if (split.words && split.words.length) {
-              //Wrap words with inner span
-              split.words.forEach((word) => {
-                const inner = document.createElement("span");
-                inner.classList.add("word_inner");
-                inner.innerHTML = word.innerHTML;
-                word.innerHTML = "";
-                word.appendChild(inner);
-              });
-
-              const wordsInner = el.querySelectorAll(".word_inner");
-
-              //Set initial state
-              gsap.set(wordsInner, {
-                y: "100%",
-                opacity: 0,
-                filter: "blur(8px)",
-                transformOrigin: "center bottom",
-              });
-
-              //Animate words
-              gsap.to(wordsInner, {
-                y: 0,
-                opacity: 1,
-                filter: "blur(0px)",
-                duration: 1,
-                ease: "power4.out",
-                stagger: 0.08,
-                scrollTrigger: {
-                  trigger: el,
-                  start: "top 85%",
-                  end: "top 65%",
-                  once: true,
-                  onEnter: () => {
-                    $el.addClass("title-animated");
-                  },
-                },
-              });
-
-              //Store split instance for potential cleanup
-              $el.data("splitText", split);
-            } else {
-              //Fallback if no words
-              useFallbackTitleAnimation(el);
-            }
-          } catch (e) {
-            console.warn("SplitText error for element", index, e);
-            useFallbackTitleAnimation(el);
-          }
-        } else {
-          //Fallback without SplitText
-          useFallbackTitleAnimation(el);
-        }
-
-        $el.data("titleAnimated", true);
-      });
-    }
-
-    //Fallback title animation function
-    function useFallbackTitleAnimation(element) {
-      gsap.fromTo(
-        element,
-        {
-          opacity: 0,
-          y: 50,
-          filter: "blur(8px)",
-        },
-        {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 85%",
-            once: true,
-          },
-        },
-      );
-    }
-
-    //Resize Handler to Refresh ScrollTrigger
-    if (typeof ScrollTrigger !== "undefined") {
-      let resizeTimer;
-
-      $(window).on("resize", function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-          ScrollTrigger.refresh();
-        }, 250);
-      });
-
-      //Initial refresh after all animations are set
-      setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 100);
-    }
-
-    //Cleanup function
-    function cleanupAnimations() {
-      //Remove event handlers
-      $(".cs_team_style_1").off(".socialAnimation");
-      $(".cs_text_btn_style_2").off(".buttonAnimation");
-
-      //Kill all ScrollTriggers
-      if (typeof ScrollTrigger !== "undefined") {
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      }
-      console.log("GSAP animations cleaned up");
-    }
-    //Store cleanup function for potential use
-    window.gsapAnimationCleanup = cleanupAnimations;
-    console.log("GSAP animations initialized successfully");
-  }
-  /*===============================================================
-    19. Dynamic contact form
-  =================================================================*/
-  function dynamicContactForm() {
-    if ($.exists("#cs_form")) {
-      const form = document.getElementById("cs_form");
-      const result = document.getElementById("cs_result");
-
-      form.addEventListener("submit", function (e) {
-        const formData = new FormData(form);
-        e.preventDefault();
-        var object = {};
-        formData.forEach((value, key) => {
-          object[key] = value;
-        });
-        var json = JSON.stringify(object);
-        result.innerHTML = "Please wait...";
-
-        fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: json,
-        })
-          .then(async (response) => {
-            let json = await response.json();
-            if (response.status == 200) {
-              result.innerHTML = json.message;
-            } else {
-              console.log(response);
-              result.innerHTML = json.message;
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-            result.innerHTML = "Something went wrong!";
-          })
-          .then(function () {
-            form.reset();
-            setTimeout(() => {
-              result.style.display = "none";
-            }, 5000);
-          });
-      });
-    }
-  }
 
     /*===============================================================
-    20. Team hover
+    13. Team hover
   =================================================================*/
   function serviceHoverTabs() {
     $(".cs_team_style_5").each(function () {
@@ -1121,7 +652,7 @@
   }
 
    /*===============================================================
-    20. show icon
+    14. show icon
   =================================================================*/
 function showIcon() {
   $(".cs_icon_btn").on("click", function (e) {
@@ -1144,6 +675,26 @@ function showIcon() {
     }
   });
 }
+
+    /*-----------------------------------------------------------
+    15. Award Wining
+  --------------------------------------------------------------*/
+  function awardHover() {
+    const awardItem = document.querySelectorAll('.cs_accordian.cs_style_4');
+
+    function followImageCursor(event, awardItem) {
+      const contentBox = awardItem.getBoundingClientRect();
+      const dx = event.clientX - contentBox.x;
+      const dy = event.clientY - contentBox.y;
+      awardItem.children[2].style.transform = `translate(${dx}px, ${dy}px)`;
+    }
+
+    awardItem.forEach((item, i) => {
+      item.addEventListener('mousemove', event => {
+        setInterval(followImageCursor(event, item), 1000);
+      });
+    });
+  }
 
 
 })(jQuery); // End of use strict
