@@ -957,7 +957,7 @@ textarea.cs_form_field {
 =========================================================*/
 
 .cs_contact_style_1 {
-  .cs_contact_form {
+  .cs_contact_form_style_1 {
     padding-right: 40px;
 
     .cs_select {
@@ -1085,8 +1085,21 @@ textarea.cs_form_field {
   }
 
   @media (max-width: 991px) {
-    .cs_contact_form {
+    .cs_contact_form_style_1 {
       padding-right: 0;
+    }
+  }
+}
+
+.cs_contact_form_style_2 {
+  .cs_form_field {
+    border: none;
+    background-color: var(--blue-color);
+  }
+  input,
+  textarea {
+    &::placeholder {
+      color: var(--light-blue-color);
     }
   }
 }

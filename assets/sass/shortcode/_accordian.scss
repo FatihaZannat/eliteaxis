@@ -125,6 +125,7 @@
       &::before {
         transform: translate(-50%, -50%) rotate(225deg);
         border-color: var(--white-color);
+        top: 21px;
       }
     }
   }
@@ -208,7 +209,7 @@
     margin-top: -4px;
     width: min(460px, 100%);
     position: relative;
-    z-index: 2;
+    // z-index: 2;
   }
 
   .cs_iconbox_thumbnail {

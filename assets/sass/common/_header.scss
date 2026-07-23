@@ -50,6 +50,13 @@
       border-radius: 50px;
       padding: 0 40px 0 60px;
       color: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+  }
+
+  &.cs_style_2 {
+    &.cs_sticky_active {
+      background-color: var(--white-color);
     }
   }
 
@@ -111,6 +118,18 @@
       height: 100%;
       padding: 0 24px;
       transition: all 0.3s ease;
+    }
+  }
+
+  &.cs_style_7 {
+    .cs_nav_list {
+      a:hover {
+        color: var(--light-blue-color);
+      }
+    }
+
+    .menu-item-has-children:hover {
+      color: var(--light-blue-color);
     }
   }
 

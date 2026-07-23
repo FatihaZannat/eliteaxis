@@ -255,7 +255,7 @@
     const sliders = document.querySelectorAll(".cs_slider");
 
     sliders.forEach((slider) => {
-      const container = slider.querySelector(".cs_slider_container");
+      const container = slider.querySelector(".swiper");
       const swiperWrapper = slider.querySelector(".swiper-wrapper");
       const status = slider.querySelector(".cs_slider_number");
       if (!container || !swiperWrapper) {

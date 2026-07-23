@@ -108,7 +108,7 @@
     position: absolute;
     opacity: 0;
     top: -100px;
-    left: 300px;
+    left: 370px;
     height: 300px;
     width: 300px;
     border-radius: 300px;
@@ -122,7 +122,7 @@
   &:hover {
     .cs_icon_img {
       opacity: 1;
-      animation: bigger 05s infinite;
+      animation: bigger 05s ease;
     }
     .cs_icon_title {
       color: var(--accent-color);
@@ -460,6 +460,9 @@
   .cs_iconbox_icon {
     width: 80px;
     height: 80px;
+    img {
+      transition: transform 0.6s ease;
+    }
   }
   .cs_number {
     opacity: 1;
@@ -468,7 +471,9 @@
   &:hover {
     .cs_iconbox_icon {
       background-color: var(--blue-color);
-      transform: rotateY(360deg);
+      img {
+        transform: rotateY(180deg);
+      }
     }
   }
 
@@ -493,6 +498,10 @@
       width: 100%;
     }
   }
+
+  .cs_iconbox_title a:hover {
+    color: var(--accent-color);
+  }
 }
 .cs_iconbox_style_11 {
   display: flex;
@@ -501,6 +510,52 @@
   padding: 30px;
   border: 1px solid var(--gray-color2);
   height: 100%;
+  background-color: var(--white-color);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    z-index: 0;
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--cs-resource-angle),
+      transparent 0deg,
+      var(--accent-color) 120deg,
+      var(--accent-color) 60deg,
+      transparent 80deg,
+      transparent 360deg
+    );
+    opacity: 0;
+    transition: opacity 3s ease;
+    padding: 2px;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+
+    mask-composite: exclude;
+
+    pointer-events: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: transparent;
+
+    border-radius: inherit;
+  }
 
   .cs_iconbox_icon {
     width: 60px;
@@ -511,6 +566,13 @@
       height: 100%;
       filter: brightness(0) saturate(100%) invert(41%) sepia(86%) saturate(365%)
         hue-rotate(131deg) brightness(93%) contrast(94%);
+    }
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+      animation: borderAnimation 2s linear infinite;
     }
   }
 
