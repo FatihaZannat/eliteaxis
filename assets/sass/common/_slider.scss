@@ -247,7 +247,7 @@
 
     .cs_nav_thumbnail {
       margin-bottom: 0 !important;
-      width: 80px;
+      width: 80px !important;
       height: 80px !important;
       border-radius: 50%;
       cursor: pointer;
@@ -278,7 +278,7 @@
       top: 17%;
       right: 0%;
       .cs_nav_thumbnail {
-        width: 50px;
+        width: 50px !important;
         height: 50px !important;
       }
     }
@@ -316,6 +316,9 @@
 
 .cs_slider.cs_style_2,
 .cs_slider.cs_style_5 {
+  .swiper-wrapper {
+    width: 100%;
+  }
   .cs_testimonial_thumbnail {
     width: 100% !important;
 
@@ -330,7 +333,7 @@
     transform: none;
 
     .cs_nav_thumbnail {
-      width: 112px;
+      width: 112px !important;
       height: 112px !important;
       border-radius: 10px;
 
@@ -354,7 +357,7 @@
   @media (max-width: 1399px) {
     .cs_single_product_nav {
       .cs_nav_thumbnail {
-        width: 100px;
+        width: 100px !important;
         height: 100px !important;
       }
     }
@@ -362,7 +365,7 @@
   @media (max-width: 1199px) {
     .cs_single_product_nav {
       .cs_nav_thumbnail {
-        width: 80px;
+        width: 80px !important;
         height: 80px !important;
       }
     }
@@ -370,7 +373,7 @@
   @media (max-width: 991px) {
     .cs_single_product_nav {
       .cs_nav_thumbnail {
-        width: 150px;
+        width: 150px !important;
         height: auto !important;
       }
     }
@@ -386,7 +389,7 @@
   @media (max-width: 767px) {
     .cs_single_product_nav {
       .cs_nav_thumbnail {
-        width: 100px;
+        width: 100px !important;
         height: auto !important;
       }
     }
@@ -444,7 +447,7 @@
 .cs_slider.cs_style_5 {
   .cs_single_product_nav {
     .cs_nav_thumbnail {
-      width: 150px;
+      width: 150px !important;
       height: 140px !important;
 
       img {
@@ -461,7 +464,7 @@
   @media (max-width: 1399px) {
     .cs_single_product_nav {
       .cs_nav_thumbnail {
-        width: 100%;
+        width: 130px !important;
       }
     }
   }
@@ -482,7 +485,7 @@
   @media (max-width: 575px) {
     .cs_single_product_nav {
       .cs_nav_thumbnail {
-        width: 100px;
+        width: 100px !important;
         height: 100px !important;
       }
     }
